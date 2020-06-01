@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <div style="float:right; font-size: 80%;">
+      <% if current_user %>
+        Logged in as <%= current_user.email %>
+      <% else %>
+        <a href="<%= new_user_session_path() %>">log in</a><br/>
+        <a href="<%= new_user_registration_path() %>">sign up</a>
+      <% end %>
+    </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
