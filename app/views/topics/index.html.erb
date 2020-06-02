@@ -1,2 +1,24 @@
-<h1>Topics#index</h1>
-<p>Find me in app/views/topics/index.html.erb</p>
+<h1>Topics</h1>
+
+<% if @topics.empty? %>
+  <p>
+    No topics!
+  </p>
+<% else %>
+    <table>
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Number of Steps</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @topics.each do |topic| %>
+              <tr>
+                <td><%= topic.desc %></td>
+                <td><%= topic.steps.size %></td>
+              </tr>
+            <% end %>
+        </tbody>
+    </table>
+<% end %>
