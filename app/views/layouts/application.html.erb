@@ -42,21 +42,19 @@
     <%= render "shared/navbar" %>
     <%= render "shared/login" %>
 
-    <header>
+    <header class="sane-height">
         <div class="header-content">
             <div class="header-content-inner">
-                <h1>This is a Great Big Top Header</h1>
-                <hr>
-                <p>And this is smaller text that goes under it.</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
           </div>
       </div>
     </header>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <p class="rails-notice"><%= notice %></p>
+    <p class="rails-alert"><%= alert %></p>
 
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
 
     <!-- Footer-->
     <footer class="bg-light py-5">

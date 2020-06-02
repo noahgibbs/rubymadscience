@@ -5,17 +5,17 @@
     No topics!
   </p>
 <% else %>
-    <table>
+    <table class="table">
         <thead>
             <tr>
-                <th>Description</th>
-                <th>Number of Steps</th>
+                <th scope="col">Title</th>
+                <th scope="col">Number of Steps</th>
             </tr>
         </thead>
         <tbody>
             <% @topics.each do |topic| %>
               <tr>
-                <td><%= topic.desc %></td>
+                <th><%= topic.desc %></th>
                 <td><%= topic.steps.size %></td>
               </tr>
             <% end %>
