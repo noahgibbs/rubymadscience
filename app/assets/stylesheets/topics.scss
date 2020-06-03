@@ -1,3 +1,21 @@
 // Place all the styles related to the topics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.topic-row {
+    margin-bottom: 2em;
+}
+
+.topic-thumbnail {
+    float:left;
+    margin: 5px;
+    margin-right: 25px;
+}
+
+.topic-thumbnail img {
+    border: 2px solid #808080;
+}
+
+.topic-text {
+    margin-left: 260px;
+}

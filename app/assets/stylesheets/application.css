@@ -13,7 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-header.sane-height {
-    min-height: 150px;
-}

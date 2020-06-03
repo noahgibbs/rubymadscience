@@ -1,22 +1,31 @@
+<div class="container">
 <% if @topics.empty? %>
   <p>
     No topics available!
   </p>
 <% else %>
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Title</th>
-                <th scope="col">Number of Steps</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% @topics.each do |topic| %>
-              <tr>
-                <th><%= topic.desc %></th>
-                <td><%= topic.steps.size %></td>
-              </tr>
-            <% end %>
-        </tbody>
-    </table>
+  <% @topics.each do |topic| %>
+    <div class="topic-row">
+      <div class="topic-thumbnail">
+        <img src="<%= topic.thumbnail_url %>" width="200" height="125" alt="<%= topic.name %>" />
+      </div>
+
+      <div class="topic-text">
+        <p class="text-muted"><%= topic.updated_at.strftime("%Y-%m-%d %H:%M") %> - XX comments</p>
+
+        <h3><%= topic.name %></h3>
+
+        <p>
+          <%= topic.desc %>
+        </p>
+
+        <a href="/topics/show?id=<%= topic.id %>"><button type="button" class="btn btn-info">Have a Look</button></a>
+        <hr/>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  <% end %>
+
+
 <% end %>
+</div>

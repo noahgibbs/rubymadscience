@@ -37,19 +37,10 @@
         </div>
     </header>
 
-    <header class="sane-height">
-        <div class="header-content">
-            <div class="header-content-inner">
-          </div>
-      </div>
-    </header>
-
     <p class="rails-notice"><%= notice %></p>
     <p class="rails-alert"><%= alert %></p>
 
-    <div class="container-fluid">
-      <%= yield %>
-    </div>
+    <%= yield %>
 
     <!-- Footer-->
     <%= render "shared/login" %>
@@ -66,6 +57,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    <script src="/js/scripts.js"></script>
   </body>
 </html>
