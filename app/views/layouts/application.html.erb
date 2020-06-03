@@ -1,32 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Ruby Mad Science: a Coding Education Site">
     <meta name="author" content="Noah Gibbs">
 
+    <!-- TODO: <link rel="icon" type="image/x-icon" href="/img/favicon.ico" /> -->
+
     <title>RubyMadScience: A Little Mad to Learn Coding</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-
-    <!-- Custom Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-
-    <!-- Plugin CSS -->
-    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/main.css" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+    <!-- Third party plugin CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
 
     <!-- Future: Google Analytics? -->
 
@@ -40,6 +30,13 @@
   <body id="page-top">
     <%= render "shared/navbar" %>
 
+    <header class="masthead">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center justify-content-center text-center">
+            </div>
+        </div>
+    </header>
+
     <header class="sane-height">
         <div class="header-content">
             <div class="header-content-inner">
@@ -50,31 +47,25 @@
     <p class="rails-notice"><%= notice %></p>
     <p class="rails-alert"><%= alert %></p>
 
-    <div class="container">
+    <div class="container-fluid">
       <%= yield %>
     </div>
 
     <!-- Footer-->
     <%= render "shared/login" %>
     <hr/>
+
     <footer class="bg-light py-5">
         <div class="container"><div class="small text-center text-muted">Copyright © 2020 - Noah Gibbs
-            <br/> Based on the <a href="https://startbootstrap.com/themes/creative/" target="_blank">Creative</a> theme from <a href="https://startbootstrap.com/" target="_blank">Start Bootstrap</a></div></div>
+        <br/> Based on the <a href="https://startbootstrap.com/themes/creative/" target="_blank">Creative</a> theme from <a href="https://startbootstrap.com/" target="_blank">Start Bootstrap</a></div></div>
     </footer>
-
-  <!-- jQuery -->
-  <script src="js/jquery.js"></script>
-
-  <!-- Bootstrap Core JavaScript -->
-  <script src="js/bootstrap.min.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="js/jquery.easing.min.js"></script>
-  <script src="js/jquery.fittext.js"></script>
-  <script src="js/wow.min.js"></script>
-
-  <!-- Custom Theme JavaScript -->
-  <script src="js/creative.js"></script>
-
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
   </body>
 </html>
