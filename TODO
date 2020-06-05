@@ -1,3 +1,2 @@
 * Sentry or similar error tracker
-* Thumbnails for topics - maybe around 200x125 or 200x150?
-* Fix up script links, either with Rails assets or CDN
+* Move end-of-body scripts into <head> with defer for Turbolinks reasons
