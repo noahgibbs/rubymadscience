@@ -1,8 +1,8 @@
-<div style="float:right; font-size: 80%;">
+<div class="login-info">
   <% if current_user %>
-    Logged in as <%= current_user.email %>
+    Logged in as <%= current_user.email %> [<%= link_to("log_out", destroy_user_session_path, method: :delete) %>]
   <% else %>
-    <a href="<%= new_user_session_path() %>">log in</a><br/>
+    <a href="<%= new_user_session_path() %>">log in</a> &nbsp;&nbsp;
     <a href="<%= new_user_registration_path() %>">sign up</a>
   <% end %>
 </div>
