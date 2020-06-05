@@ -1,2 +1,30 @@
-<h1>Topics#show</h1>
-<p>Find me in app/views/topics/show.html.erb</p>
+<div class="container">
+  <h1><%= @topic.name %></h1>
+
+  <% steps = @topic.get_steps %>
+  <% if steps.empty? %>
+    <p>No steps! Something is wrong with this topic!</p>
+  <% else %>
+    <% steps.each do |step| %>
+
+        <div class="step-row">
+          <h3><%= step.name %></h3>
+
+          <p>
+            <a href="<%= step.url %>" target="_blank">🔗 External link 🔗</a>
+          </p>
+
+          <div class="done-select-group">
+              <label for="<%= step.id %>-done-select">Done?</label>
+              <select class="done-select" id="<%= step.id %>-done-select" value="Not Implemented..." disabled="disabled">
+                <option>Not Implemented...</option>
+                <option>Not Done</option>
+                <option>Skip</option>
+                <option>Done</option>
+              </select>
+          </div>
+        </div>
+    <% end %>
+
+  <% end %>
+</div>
