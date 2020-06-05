@@ -6,23 +6,29 @@
     <p>No steps! Something is wrong with this topic!</p>
   <% else %>
     <% steps.each do |step| %>
-
         <div class="step-row">
-          <h3><%= step.name %></h3>
+            <h3><%= step.name %></h3>
 
-          <p>
-            <a href="<%= step.url %>" target="_blank">🔗 External link 🔗</a>
-          </p>
+            <p>
+                <a href="<%= step.url %>" target="_blank">🔗 External link 🔗</a>
+            </p>
 
-          <div class="done-select-group">
-              <label for="<%= step.id %>-done-select">Done?</label>
-              <select class="done-select" id="<%= step.id %>-done-select" value="Not Implemented..." disabled="disabled">
-                <option>Not Implemented...</option>
-                <option>Not Done</option>
-                <option>Skip</option>
-                <option>Done</option>
-              </select>
-          </div>
+            <% if current_user %>
+                <% user_step_item = UserStepItem.where(user_id: current_user.id, step_id: step.id).first
+                   doneness = user_step_item ? user_step_item.done_as_text : UserStepItem.done_as_text(0)
+                %>
+                <div class="done-select-group">
+                    <label for="<%= step.id %>-done-select">Done?</label>
+                    <%= select_tag("#{step.id}-done-select", options_for_select(UserStepItem.done_values, doneness), class: "done-select", data: { step_id: step.id }) %>
+                </div>
+            <% else %>
+                <div class="done-select-group">
+                    <label for="<%= step.id %>-done-select">Done?</label>
+                    <select class="done-select" disabled="disabled" id="<%= step.id %>-done-select">
+                        <option value="">Not Logged In</option>
+                    </select>
+                </div>
+            <% end %>
         </div>
     <% end %>
 
