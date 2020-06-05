@@ -1,3 +1,5 @@
+<%= javascript_pack_tag 'steps' %>
+
 <div class="container">
   <h1><%= @topic.name %></h1>
 
@@ -15,11 +17,12 @@
 
             <% if current_user %>
                 <% user_step_item = UserStepItem.where(user_id: current_user.id, step_id: step.id).first
-                   doneness = user_step_item ? user_step_item.done_as_text : UserStepItem.done_as_text(0)
+                   doneness = user_step_item ? user_step_item.doneness : 0
                 %>
                 <div class="done-select-group">
+                    <div class="select-error-box error" id="select-error-box-<%= step.id %>"></div>
                     <label for="<%= step.id %>-done-select">Done?</label>
-                    <%= select_tag("#{step.id}-done-select", options_for_select(UserStepItem.done_values, doneness), class: "done-select", data: { step_id: step.id }) %>
+                    <%= select_tag("#{step.id}-done-select", options_for_select(UserStepItem.done_selector, doneness), class: "done-select", data: { step_id: step.id }) %>
                 </div>
             <% else %>
                 <div class="done-select-group">

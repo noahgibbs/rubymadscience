@@ -12,6 +12,10 @@ class UserStepItem < ApplicationRecord
         DONE_MAP.values
     end
 
+    def self.done_selector
+        DONE_MAP.to_a.map(&:reverse)
+    end
+
     def self.done_as_text(int_value)
         DONE_MAP[int_value]
     end
