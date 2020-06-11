@@ -11,9 +11,9 @@ class StepsController < ApplicationController
     end
 
     if saved
-        render :text => "OK", :layout => nil, :status => 200
+        render plain: "OK", layout: nil, status: 200
     else
-        render :status => 404
+        render plain: "Not Found", layout: nil, :status => 404
     end
   end
 end
