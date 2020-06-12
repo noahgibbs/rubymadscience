@@ -7,8 +7,13 @@
   <% if steps.empty? %>
     <p>No steps! Something is wrong with this topic!</p>
   <% else %>
-    <% steps.each do |step| %>
-        <div class="step-row">
+    <% steps.each do |step|
+        if current_user
+            user_step_item = UserStepItem.where(user_id: current_user.id, step_id: step.id).first
+        end
+        doneness = user_step_item ? user_step_item.doneness : 0
+        %>
+        <div class="step-row" data-server-value="<%= doneness %>">
             <h3><%= step.name %></h3>
 
             <p>
@@ -16,9 +21,6 @@
             </p>
 
             <% if current_user %>
-                <% user_step_item = UserStepItem.where(user_id: current_user.id, step_id: step.id).first
-                   doneness = user_step_item ? user_step_item.doneness : 0
-                %>
                 <div class="done-select-group">
                     <div class="select-error-box error" id="select-error-box-<%= step.id %>"></div>
                     <label for="<%= step.id %>-done-select">Done?</label>
@@ -26,10 +28,7 @@
                 </div>
             <% else %>
                 <div class="done-select-group">
-                    <label for="<%= step.id %>-done-select">Done?</label>
-                    <select class="done-select" disabled="disabled" id="<%= step.id %>-done-select">
-                        <option value="">Not Logged In</option>
-                    </select>
+                    <label for="<%= step.id %>-done-select">Done?</label> (Log in to track progress)
                 </div>
             <% end %>
         </div>

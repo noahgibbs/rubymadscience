@@ -26,7 +26,22 @@
     padding: 1em;
     border: 1px solid #A0A0A0;
     border-radius: 10px;
-    background: #C0E0FF;
+}
+
+.step-row[data-server-value="0"] {
+    background: #F5FBFF;
+}
+
+.step-row[data-server-value="1"] {
+    background: #F5FFFB;
+}
+
+.step-row[data-server-value="2"] {
+    background: #E0E0E0;
+}
+
+.step-row[data-server-value="error"] {
+    background: #FFFBF8;
 }
 
 .select-error-box {
