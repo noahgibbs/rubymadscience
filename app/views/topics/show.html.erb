@@ -28,7 +28,7 @@
                 </div>
             <% else %>
                 <div class="done-select-group">
-                    <label for="<%= step.id %>-done-select">Done?</label> (Log in to track progress)
+                    <label for="<%= step.id %>-done-select">Done?</label> (<%= link_to("Log in", new_user_session_path) %> to track progress)
                 </div>
             <% end %>
         </div>
