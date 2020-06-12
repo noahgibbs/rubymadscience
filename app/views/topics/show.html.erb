@@ -23,6 +23,7 @@
             <% if current_user %>
                 <div class="done-select-group">
                     <div class="select-error-box error" id="select-error-box-<%= step.id %>"></div>
+                    <button data-step-id="<%= step.id %>" class="mark-done-button btn btn-primary" <%= doneness != 0 ? 'disabled' : '' %> >Mark Done</button>
                     <label for="<%= step.id %>-done-select">Done?</label>
                     <%= select_tag("#{step.id}-done-select", options_for_select(UserStepItem.done_selector, doneness), class: "done-select", data: { step_id: step.id }) %>
                 </div>
