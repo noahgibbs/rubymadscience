@@ -3,7 +3,7 @@
     "desc": "This topic is about coding studies: a specific coding practice exercise. First you'll learn how to do them, then see some coding studies in action.",
     "thumbnail_url": "/img/rms_thumb_flask.png",
     "data": {
-        "related": ["software_practice"],
+        "related": ["software_practice"]
     },
     "steps": [
         {

@@ -3,7 +3,7 @@
     "desc": "Writing software is a practical, experience-based skill like playing tennis, riding a bike or playing music. You get better by practicing. Like those other skills, it matters <i>how</i> you practice. This topic is all about how to practice and improve at writing software.",
     "thumbnail_url": "/img/rms_thumb_flask.png",
     "data": {
-        "related": ["coding_studies"],
+        "related": ["coding_studies"]
     },
     "steps": [
         {
