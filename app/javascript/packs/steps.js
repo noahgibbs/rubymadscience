@@ -2,6 +2,7 @@ var row_update_handler = function(row_jq_object, step_id, set_value) {
     var row_elt = row_jq_object;
     var button_elt = row_elt.find(".mark-done-button");
     var selector_elt = row_elt.find("select.done-select");
+    var error_elt = row_elt.find(".select-error-box")
 
     button_elt.prop("disabled", true);
     selector_elt.prop("disabled", true);
@@ -14,14 +15,14 @@ var row_update_handler = function(row_jq_object, step_id, set_value) {
             note: ""
         },
         success: function() {
-            $("#select-error-box-" + step_id).text("");
+            error_elt.text("");
             selector_elt.prop('disabled', false);
             button_elt.prop('disabled', set_value != 0)
             row_elt.attr("data-server-value", set_value);
             selector_elt[0].value = set_value;
         },
         error: function() {
-            $("#select-error-box-" + step_id).text("(Server error)");
+            error_elt.text("(Server error)");
             selector_elt.prop('disabled', false);
             row_elt.attr("data-server-value", "error");
         }

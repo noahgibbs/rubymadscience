@@ -1,6 +1,5 @@
 class UserStepItem < ApplicationRecord
     belongs_to :user
-    belongs_to :step
 
     DONE_MAP = {
         0 => "Not Done",

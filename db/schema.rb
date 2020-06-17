@@ -10,35 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_05_072951) do
-
-  create_table "steps", force: :cascade do |t|
-    t.string "name"
-    t.integer "topic_id"
-    t.integer "order"
-    t.string "url"
-    t.string "type"
-    t.json "extra_data"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["topic_id", "order"], name: "index_steps_on_topic_id_and_order"
-  end
-
-  create_table "topics", force: :cascade do |t|
-    t.string "desc"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.json "extra_data"
-    t.string "name"
-    t.string "thumbnail_url"
-    t.string "comment_url"
-  end
+ActiveRecord::Schema.define(version: 2020_06_17_152846) do
 
   create_table "user_step_items", force: :cascade do |t|
     t.integer "doneness"
     t.string "note"
     t.integer "user_id"
-    t.integer "step_id"
+    t.string "step_id"
     t.index ["user_id", "step_id"], name: "index_user_step_items_on_user_id_and_step_id"
   end
 
