@@ -1,0 +1,111 @@
+{
+    "name": "Software Practice",
+    "desc": "Writing software is a practical, experience-based skill like playing tennis, riding a bike or playing music. You get better by practicing. Like those other skills, it matters <i>how</i> you practice. This topic is all about how to practice and improve at writing software.",
+    "thumbnail_url": "/img/rms_thumb_flask.png",
+    "data": {
+        "related": ["coding_studies"],
+    },
+    "steps": [
+        {
+            "name": "Practice Deeply and Consciously",
+            "url": "https://codefol.io/posts/practice-deeply-and-consciously/",
+            "id": "practice-deeply-and-consciously",
+            "type": "blog",
+            "desc": "When we talk about practice, what makes good practice? How should we practice to get the best results? The answers are simple, but not always easy.",
+            "data": {
+            }
+        },
+        {
+            "name": "Practice Software Technique with a Single Idea and a Time Limit",
+            "url": "https://codefol.io/posts/single-idea-with-time-limit/",
+            "id": "single-idea-with-time-limit",
+            "type": "blog",
+            "desc": "Are you practicing your coding? Here are a couple of ways to get better, faster.",
+            "data": {
+            }
+        },
+        {
+            "name": "How to Stop Being Afraid of the Computer Science Thing",
+            "url": "https://codefol.io/posts/the-computer-science-thing/",
+            "id": "the-computer-science-thing",
+            "type": "blog",
+            "desc": "From fresh boot-camp grads to twenty-year veteran coders, somehow nearly everybody is afraid of what they call 'the computer science thing.' Let's talk about why you, specifically, shouldn't be.",
+            "data": {
+            }
+        },
+        {
+            "name": "What You Learn by Repeating Exercises",
+            "url": "https://codefol.io/posts/what-you-learn-by-repeating-exercises/",
+            "id": "what-you-learn-by-repeating-exercises",
+            "type": "blog",
+            "desc": "Should you do the same exercise repeatedly? Yes. Here's why.",
+            "data": {
+            }
+        },
+        {
+            "name": "What Steve Martin Taught Me About Coding",
+            "url": "https://codefol.io/posts/wait-let-me-explain-my-theory-what-steve-martin-taught-me/",
+            "id": "wait-let-me-explain-my-theory-what-steve-martin-taught-me",
+            "type": "blog",
+            "desc": "Comedians do some of the most intense practice and skill-building of any profession. Here's what you can learn about coding practice from Steve Martin.",
+            "data": {
+            }
+        },
+        {
+            "name": "The Fear of Wasted Practice Time",
+            "url": "https://codefol.io/posts/fear-of-wasted-practice-time/",
+            "id": "fear-of-wasted-practice-time",
+            "type": "blog",
+            "desc": "Sometime your big obstacle in practice is the fear of doing it wrong. Here's what to do about that.",
+            "data": {
+            }
+        },
+        {
+            "name": "How to Commit to Mastery",
+            "url": "https://codefol.io/posts/how-to-commit-to-mastery/",
+            "id": "how-to-commit-to-mastery",
+            "type": "blog",
+            "desc": "The hard part of mastering a skill is putting in <i>consistent</i> work, and making the commitment to do it. Let's talk about how to that. And why you should hate Matt Bird with a burning passion.",
+            "data": {
+            }
+        },
+        {
+            "name": "Oh No! I Keep Doing Useful Tasks!",
+            "url": "https://codefol.io/posts/letter-i-keep-doing-useful-tasks/",
+            "id": "letter-i-keep-doing-useful-tasks",
+            "type": "blog_and_video",
+            "desc": "If you try to sit down to practice, and instead wind up doing useful tasks, is that a problem? It can be. Here I answer a reader letter about it.",
+            "data": {
+                "video": { "youtube": "6l3sotz7OBc" }
+            }
+        },
+        {
+            "name": "Why Don't Software Developers Do More Coding Exercises?",
+            "url": "https://codefol.io/posts/why-dont-we-do-more-coding-exercises/",
+            "id": "why-dont-we-do-more-coding-exercises",
+            "type": "blog",
+            "desc": "Coding exercises are a thing. You haven't seen me recommend them much. Experienced software developers don't usually do them. Why not? Are some worth doing and others not?",
+            "data": {
+            }
+        },
+        {
+            "name": "There's No Such Thing as Knowing Your Computer All the Way to the Bottom",
+            "url": "https://codefol.io/posts/no-such-thing-as-knowing-coding-all-the-way-to-the-bottom/",
+            "id": "no-such-thing-as-knowing-coding-all-the-way-to-the-bottom",
+            "type": "blog_and_video",
+            "desc": "Many folks will tell you to learn the lowest-level languages and libraries, the parts closest to the hardware. <b><i>They're wrong</i></b>. Here's why. The blog post is an expanded version of the video.",
+            "data": {
+                "video": { "youtube": "XIzw4zQPbcY" }
+            }
+        },
+        {
+            "name": "You Learn the Most with Throwaway Prototypes",
+            "url": "http://codefol.io/posts/you-learn-the-most-with-throwaway-prototypes/",
+            "id": "you-learn-the-most-with-throwaway-prototypes",
+            "type": "blog",
+            "desc": "When you're learning, you should plan to throw away most of the code you write. On purpose. In fact, you should decide to throw it away <i>before</i> you start writing most of it. Let me explain&hellip;",
+            "data": {
+            }
+        }
+    ]
+}

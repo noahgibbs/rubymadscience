@@ -1,0 +1,37 @@
+{
+    "name": "Coding Studies",
+    "desc": "This topic is about coding studies: a specific coding practice exercise. First you'll learn how to do them, then see some coding studies in action.",
+    "thumbnail_url": "/img/rms_thumb_flask.png",
+    "data": {
+        "related": ["software_practice"],
+    },
+    "steps": [
+        {
+            "name": "Conscious Coding Practice: the Three Concrete Steps",
+            "id": "rubyconf-conscious-coding-practice",
+            "type": "video",
+            "desc": "Coding studies are a specific coding practice exercise, stolen from a profession with a lot more teaching experience than we have. This forty-minute video tells you the what, why and how.",
+            "data": {
+                "video": { "youtube": "33fAzjOTaDE" }
+            }
+        },
+        {
+            "name": "A Simple Coding Study: Ivy on a Windowsill",
+            "url": "https://codefol.io/posts/a-simple-coding-exercise/",
+            "id": "a-simple-coding-exercise",
+            "type": "blog",
+            "desc": "Here's a simple example of how to look at something in the real-world, like an artist, and mimic the interesting features to get better at coding.",
+            "data": {
+            }
+        },
+        {
+            "name": "Coding Study: ASCII Art Faces",
+            "id": "rubyconf-conscious-coding-practice",
+            "type": "video",
+            "desc": "This topic is about coding studies: a specific coding practice exercise, stolen from a profession with a lot more teaching experience than we have. This forty-minute video tells you the what, why and how.",
+            "data": {
+                "video": { "youtube": "c-ymcTlr4nU" }
+            }
+        }
+    ]
+}
