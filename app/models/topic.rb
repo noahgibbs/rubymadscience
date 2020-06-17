@@ -4,6 +4,13 @@ class Topic
     STEP_TYPES = [:video, :blog, :blog_and_video]
     TOPIC_ROOT = File.join(Rails.root, "app", "models", "topics")
 
+    # This is how we do the view mapping of type to output markup
+    PARTIAL_BY_TYPE = {
+        "blog" => "step_blog",
+        "video" => "step_video",
+        "blog_and_video" => "step_blog_and_video",
+    }
+
     TopicStruct = Struct.new(*TOPIC_KEYS, keyword_init: true) do
         # Helper methods can go here
     end

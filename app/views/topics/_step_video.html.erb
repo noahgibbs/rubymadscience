@@ -1,0 +1,9 @@
+<h3><%= step.name %></h3>
+
+<p><%= step.desc.html_safe %></p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= step.data["video"]["youtube"] %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>
+    <a href="<%= step.url %>" target="_blank">🔗 Open Video in New Tab 🔗</a>
+</p>

@@ -3,6 +3,8 @@
 <div class="container">
   <h1><%= @topic.name %></h1>
 
+  <p><%= @topic.desc.html_safe %></p>
+
   <% steps = @topic.steps %>
   <% if steps.empty? %>
     <p>No steps! Something is wrong with this topic!</p>
@@ -14,11 +16,8 @@
         doneness = user_step_item ? user_step_item.doneness : 0
         %>
         <div class="step-row" data-server-value="<%= doneness %>">
-            <h3><%= step.name %></h3>
 
-            <p>
-                <a href="<%= step.url %>" target="_blank">🔗 External link 🔗</a>
-            </p>
+            <%= render "step", step: step %>
 
             <% if current_user %>
                 <div class="done-select-group">
@@ -34,6 +33,18 @@
             <% end %>
         </div>
     <% end %>
+    <% if @topic.data["related"] && !@topic.data["related"].empty? %>
+        <p>
+            Looking for similar topics? Try these!
+        </p>
 
+        <ul>
+            <% @topic.data["related"].each do |rel_topic_id|
+                rel_topic = Topic.find(rel_topic_id)
+                %>
+                <li><a href="/topics/show?id=<%= rel_topic_id %>"><%= rel_topic.name %></a></li>
+            <% end %>
+        </ul>
+    <% end %>
   <% end %>
 </div>
