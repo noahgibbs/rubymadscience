@@ -2,8 +2,8 @@
 
 <p><%= step.desc.html_safe %></p>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= step.data["video"]["youtube"] %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<%= render "topics/step_video_elt", step: step %>
 
-<p>
+<div class="external-link-block">
     <a href="<%= step.url %>" target="_blank">🔗 Open Blog Post in New Tab 🔗</a>
-</p>
+</div>

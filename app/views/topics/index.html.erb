@@ -10,18 +10,18 @@
         <img src="<%= topic.thumbnail_url %>" width="200" height="125" alt="<%= topic.name %>" />
       </div>
 
-      <div class="topic-text">
-        <p class="text-muted"><%= topic.updated_at.strftime("%Y-%m-%d %H:%M") %> - XX comments</p>
-
-        <h3><%= topic.name %></h3>
+      <div class="topic-index-text">
+        <h3 class="text-primary"><%= topic.name %></h3>
 
         <p>
           <%= topic.desc.html_safe %>
         </p>
 
-        <a href="/topics/show?id=<%= topic.id %>"><button type="button" class="btn btn-info">Have a Look</button></a>
-        <hr/>
+        <a href="/topics/show?id=<%= topic.id %>"><button type="button" class="btn btn-primary">Show Me</button></a>
+
+        <p class="text-muted topic-index-metadata"><%= topic.updated_at.strftime("%Y-%m-%d %H:%M") %> - XX comments</p>
       </div>
+      <hr/>
     </div>
     <div class="clearfix"></div>
   <% end %>

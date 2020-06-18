@@ -12,12 +12,50 @@
     margin-right: 25px;
 }
 
+.topic-mini-thumbnail {
+    border: 2px solid #808080;
+    margin-right: 15px;
+}
+
+.topic-thumbnail-header {
+    float:right;
+    margin: 5px;
+}
+
 .topic-thumbnail img {
     border: 2px solid #808080;
 }
 
-.topic-text {
+.topic-thumbnail-header img {
+    border: 2px solid #808080;
+}
+
+.topic-index-text {
     margin-left: 260px;
+}
+
+.topic-index-metadata {
+    float:right;
+}
+
+.steps-title-row {
+    padding: 1em;
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+}
+
+.steps-title-row img {
+    margin: 10px;
+}
+
+.step-row,.topic-recommendations-row,.steps-title-row {
+    max-width: 700px;
+}
+
+.topic-recommendations-row {
+    padding: 1em;
+    border: 1px solid #E8E8E8;
+    border-radius: 10px;
 }
 
 .step-row {
@@ -28,22 +66,43 @@
     border-radius: 10px;
 }
 
+// For steps marked 'Not Done'
 .step-row[data-server-value="0"] {
     background: #F5FBFF;
 }
 
+// For steps marked 'Skip'
 .step-row[data-server-value="1"] {
     background: #F5FFFB;
 }
 
+// For steps marked 'Done'
 .step-row[data-server-value="2"] {
     background: #E0E0E0;
+    color: #505050;
 }
 
+// For steps that got a server error
 .step-row[data-server-value="error"] {
     background: #FFFBF8;
 }
 
 .select-error-box {
     color: #f00;
+}
+
+.step-video {
+    text-align: center;
+}
+
+.step-video youtube-embed {
+    display: inline-block;
+}
+
+.external-link-block {
+    text-align: center;
+}
+
+.external-link-block a {
+    display: inline-block;
 }

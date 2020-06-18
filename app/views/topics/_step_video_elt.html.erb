@@ -1,0 +1,9 @@
+<div class="step-video">
+    <% if step.data["video"] && step.data["video"]["youtube"] %>
+    <div class="youtube-embed">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= step.data["video"]["youtube"] %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <% else %>
+        <% raise "Non-Youtube video providers are not yet supported!" %>
+    <% end %>
+</div>
