@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_06_17_152846) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "user_step_items", force: :cascade do |t|
     t.integer "doneness"
     t.string "note"
