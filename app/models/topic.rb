@@ -1,5 +1,5 @@
 class Topic
-    TOPIC_KEYS = [:name, :desc, :thumbnail_url, :id, :data, :steps, :created_at, :updated_at]
+    TOPIC_KEYS = [:name, :desc, :thumbnail_url, :bigthumb_url, :fullsize_url, :id, :data, :steps, :created_at, :updated_at]
     STEP_KEYS = [:name, :desc, :url, :id, :type, :data]
     STEP_TYPES = [:video, :blog, :blog_and_video]
     TOPIC_ROOT = File.join(Rails.root, "app", "models", "topics")
@@ -49,13 +49,13 @@ class Topic
                 data: step_objs["data"]
         end
 
-        TopicStruct.new name: raw_objs["name"],
-            desc: raw_objs["desc"],
-            thumbnail_url: raw_objs["thumbnail_url"],
-            data: raw_objs["data"],
+        args = {}
+        TOPIC_KEYS.each { |tk| args[tk] = raw_objs[tk.to_s] }
+        TopicStruct.new args.merge({
             steps: steps,
             id: id,
             created_at: created,
             updated_at: updated
+            })
     end
 end

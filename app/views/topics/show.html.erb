@@ -4,13 +4,14 @@
 <div class="container">
   <div class="steps-title-row">
       <div class="topic-thumbnail-header">
-        <img src="<%= @topic.thumbnail_url %>" width="200" height="125" alt="<%= @topic.name %>" />
+        <img src="<%= @topic.bigthumb_url %>" width="400" height="250" alt="<%= @topic.name %>" />
       </div>
 
       <h1 class="text-primary"><%= @topic.name %></h1>
 
       <p><%= @topic.desc.html_safe %></p>
   </div>
+  <div class="clearfix"></div>
 
   <% steps = @topic.steps %>
   <% if steps.empty? %>

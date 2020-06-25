@@ -7,7 +7,9 @@
   <% @topics.each do |topic| %>
     <div class="topic-row">
       <div class="topic-thumbnail">
-        <img src="<%= topic.thumbnail_url %>" width="200" height="125" alt="<%= topic.name %>" />
+        <a href="/topics/show?id=<%= topic.id %>">
+          <img src="<%= topic.thumbnail_url %>" width="200" height="125" alt="<%= topic.name %>" />
+        </a>
       </div>
 
       <div class="topic-index-text">

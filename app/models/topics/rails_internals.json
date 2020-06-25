@@ -1,7 +1,9 @@
 {
     "name": "Rails Internals",
     "desc": "Structure and internals of Ruby on Rails. Learn how to peek under the covers of your framework.",
-    "thumbnail_url": "/img/rms_thumb_rails_internals.png",
+    "thumbnail_url": "/img/rails_internals_thumb.png",
+    "bigthumb_url": "/img/rails_internals_bigthumb.png",
+    "fullsize_url": "/img/rails_internals_fullsize.png",
     "data": {
     },
     "steps": [

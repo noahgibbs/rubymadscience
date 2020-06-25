@@ -1,7 +1,9 @@
 {
     "name": "Coding Studies",
     "desc": "This topic is about coding studies: a specific coding practice exercise. First you'll learn how to do them, then see some coding studies in action.",
-    "thumbnail_url": "/img/rms_thumb_flask.png",
+    "thumbnail_url": "/img/coding_studies_thumb.png",
+    "bigthumb_url": "/img/coding_studies_bigthumb.png",
+    "fullsize_url": "/img/coding_studies_fullsize.png",
     "data": {
         "related": ["software_practice"]
     },
