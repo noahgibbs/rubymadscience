@@ -27,14 +27,14 @@
             <%= render "step", step: step %>
 
             <% if current_user %>
-                <div class="done-select-group">
+                <div class="done-button-group">
                     <div class="select-error-box error"></div>
-                    <button data-step-id="<%= step.id %>" class="mark-done-button btn btn-primary" <%= doneness != 0 ? 'disabled' : '' %> >OK, Done!</button>
-                    <label for="<%= step.id %>-done-select">Done?</label>
-                    <%= select_tag("#{step.id}-done-select", options_for_select(UserStepItem.done_selector, doneness), class: "done-select", data: { step_id: step.id }) %>
+                    <button data-step-id="<%= step.id %>" class="mark-doneness-button btn btn-success" <%= doneness != 0 ? 'disabled' : '' %> data-set-value="2" >OK, Done!</button>
+                    <button data-step-id="<%= step.id %>" class="mark-doneness-button btn btn-warning" <%= doneness != 0 ? 'disabled' : '' %> data-set-value="1" >Skip&hellip;</button>
+                    <button data-step-id="<%= step.id %>" class="mark-doneness-button btn btn-danger" <%= doneness == 0 ? 'disabled' : '' %> data-set-value="0" >Wait, Not Done!</button>
                 </div>
             <% else %>
-                <div class="done-select-group">
+                <div class="done-button-group">
                     <label for="<%= step.id %>-done-select">Done?</label> (<%= link_to("Log in", new_user_session_path) %> to track progress)
                 </div>
             <% end %>

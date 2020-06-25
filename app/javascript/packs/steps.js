@@ -1,51 +1,42 @@
-var row_update_handler = function(row_jq_object, step_id, set_value) {
-    var row_elt = row_jq_object;
-    var button_elt = row_elt.find(".mark-done-button");
-    var selector_elt = row_elt.find("select.done-select");
-    var error_elt = row_elt.find(".select-error-box")
+let row_update_handler = function(row_jq_object, step_id, set_value) {
+    let row_elt = row_jq_object;
+    let done_button_elt = row_elt.find(".mark-doneness-button[data-set-value=2]");
+    let skip_button_elt = row_elt.find(".mark-doneness-button[data-set-value=1]");
+    let undone_button_elt = row_elt.find(".mark-doneness-button[data-set-value=0]");
+    let error_elt = row_elt.find(".select-error-box")
 
-    button_elt.prop("disabled", true);
-    selector_elt.prop("disabled", true);
+    done_button_elt.prop("disabled", true);
+    skip_button_elt.prop("disabled", true);
+    undone_button_elt.prop("disabled", true);
 
     $.ajax("/steps/update_done", {
         method: 'post',
         data: {
             step_id: step_id,
-            done: 2,
+            done: set_value,
             note: ""
         },
         success: function() {
             error_elt.text("");
-            selector_elt.prop('disabled', false);
-            button_elt.prop('disabled', set_value != 0)
+            done_button_elt.prop('disabled', set_value != 0)
+            skip_button_elt.prop('disabled', set_value != 0)
+            undone_button_elt.prop('disabled', set_value == 0)
             row_elt.attr("data-server-value", set_value);
-            selector_elt[0].value = set_value;
         },
         error: function() {
             error_elt.text("(Server error)");
-            selector_elt.prop('disabled', false);
             row_elt.attr("data-server-value", "error");
         }
     });
 }
 
-$("body").on("change", "select.done-select", function(e) {
-    var changed_elt = $(this);
-    var step_id = changed_elt.data("step-id");
-    var set_value = this.value;
-    var row_obj = changed_elt.parents(".step-row");
+$("body").on("click", ".mark-doneness-button", function (e) {
+    let button_elt = $(this);
+    let step_id = button_elt.data("step-id");
+    let row_obj = button_elt.parents(".step-row");
+    let set_value = button_elt.data("set-value");
 
-    row_update_handler(row_obj, step_id, set_value);
-
-    e.preventDefault();
-});
-
-$("body").on("click", ".mark-done-button", function (e) {
-    var button_elt = $(this);
-    var step_id = button_elt.data("step-id");
-    var row_obj = button_elt.parents(".step-row");
-
-    row_update_handler(row_obj, step_id, 2); // set_value is 2, or "Done"
+    row_update_handler(row_obj, step_id, set_value); // set_value is 2, or "Done"
 
     e.preventDefault();
 });
