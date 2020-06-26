@@ -13,7 +13,7 @@
       </div>
 
       <div class="topic-index-text">
-        <h3 class="text-primary"><%= topic.name %></h3>
+        <a href="/topics/show?id=<%= topic.id %>"><h3 class="text-primary"><%= topic.name %></h3></a>
 
         <p>
           <%= topic.desc.html_safe %>
@@ -21,7 +21,7 @@
 
         <a href="/topics/show?id=<%= topic.id %>"><button type="button" class="btn btn-primary">Show Me</button></a>
 
-        <p class="text-muted topic-index-metadata"><%= topic.updated_at.strftime("%Y-%m-%d %H:%M") %> - XX comments</p>
+        <p class="text-muted topic-index-metadata">Last Update: <%= topic.updated_at.strftime("%Y-%m-%d") %> - XX comments</p>
       </div>
       <hr/>
     </div>

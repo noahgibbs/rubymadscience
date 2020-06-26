@@ -39,31 +39,27 @@
 }
 
 .steps-title-row {
-    padding: 1em;
     border: 1px solid #FFFFFF;
-    border-radius: 10px;
 }
 
 .steps-title-row img {
     margin: 10px;
 }
 
-.step-row,.topic-recommendations-row,.steps-title-row {
+.step-row,.topic-recommendations-row,.steps-title-row,.topic-email-reminder-box {
+    padding: 1em;
     max-width: 800px;
+    border-radius: 10px;
 }
 
 .topic-recommendations-row {
-    padding: 1em;
     border: 1px solid #E8E8E8;
-    border-radius: 10px;
 }
 
 .step-row {
     margin-top: 2em;
     margin-bottom: 2em;
-    padding: 1em;
     border: 1px solid #A0A0A0;
-    border-radius: 10px;
 }
 
 // For steps marked 'Not Done'
@@ -114,4 +110,11 @@
 
 .external-link-block a {
     display: inline-block;
+}
+
+.topic-email-reminder-box {
+    font-size: 125%;
+    border-radius: 10px;
+    background: #F5FFFB;
+    border: 1px solid #A0A0A0;
 }

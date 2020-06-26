@@ -13,6 +13,32 @@
   </div>
   <div class="clearfix"></div>
 
+  <div class="topic-email-reminder-box">
+      <% if current_user %>
+        Email reminders for this topic:
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-primary active">
+                <input type="radio" id="email-reminders-none" autocomplete="off" checked />
+                No Reminders
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" id="email-reminders-weekly" autocomplete="off" />
+                Weekly
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" id="email-reminders-daily" autocomplete="off" />
+                Daily
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" id="email-reminders-monthly" autocomplete="off" />
+                Monthly
+            </label>
+        </div>
+      <% else %>
+        (Log in to track progress or opt into emailed reminders.)
+      <% end %>
+  </div>
+
   <% steps = @topic.steps %>
   <% if steps.empty? %>
     <p>No steps! Something is wrong with this topic!</p>
