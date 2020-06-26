@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_17_152846) do
+ActiveRecord::Schema.define(version: 2020_06_26_222649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 2020_06_17_152846) do
     t.integer "user_id"
     t.string "step_id"
     t.index ["user_id", "step_id"], name: "index_user_step_items_on_user_id_and_step_id"
+  end
+
+  create_table "user_topic_items", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "topic_id"
+    t.string "subscription"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id", "topic_id"], name: "index_user_topic_items_on_user_id_and_topic_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|
