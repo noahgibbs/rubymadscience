@@ -28,10 +28,11 @@
     <p>No steps! Something is wrong with this topic!</p>
   <% else %>
     <% steps.each do |step|
+        doneness = 0
         if current_user
-            user_step_item = UserStepItem.where(user_id: current_user.id, step_id: step.id).first
+            user_step_item = @step_item_by_id[step.id]
+            doneness = user_step_item.doneness if user_step_item
         end
-        doneness = user_step_item ? user_step_item.doneness : 0
         %>
         <div class="step-row" data-server-value="<%= doneness %>">
             <h3><%= step.name %></h3>

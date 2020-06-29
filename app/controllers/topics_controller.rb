@@ -6,7 +6,11 @@ class TopicsController < ApplicationController
   def show
     @topic = Topic.find(params[:id])
     if current_user
+        step_ids = @topic.steps.map(&:id)
         @ut = UserTopicItem.where(user_id: current_user.id, topic_id: @topic.id).first
+        us = UserStepItem.where(user_id: current_user.id, step_id: [step_ids]).all
+        @step_item_by_id = {}
+        us.each { |step_item| @step_item_by_id[step_item.step_id] = step_item }
     end
   end
 
