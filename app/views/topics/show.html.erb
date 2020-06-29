@@ -13,10 +13,11 @@
   </div>
   <div class="clearfix"></div>
 
-  <div class="topic-email-reminder-box">
+  <div class="topic-email-reminder-box" data-topic-id="<%= @topic.id %>">
       <% if current_user %>
-        Email reminders for this topic:
-        <%= bootstrap_button_group({ "none" => "No Reminders", "daily" => "Daily", "weekly" => "Weekly", "monthly" => "Monthly" }, selected: "none") %>
+        <%= link_to("Email Reminders", "/profile") %> for this topic:
+        <%= bootstrap_button_group(UserTopicItem::SUBSCRIPTION_VALUES, selected: @ut ? @ut.subscription : "none") %>
+        <div class="subscription-error"></div>
       <% else %>
         (Log in to track progress or opt into emailed reminders.)
       <% end %>

@@ -28,7 +28,7 @@ let row_update_handler = function(row_jq_object, step_id, set_value) {
             row_elt.attr("data-server-value", "error");
         }
     });
-}
+};
 
 $("body").on("click", ".mark-doneness-button", function (e) {
     let button_elt = $(this);
@@ -36,7 +36,31 @@ $("body").on("click", ".mark-doneness-button", function (e) {
     let row_obj = button_elt.parents(".step-row");
     let set_value = button_elt.data("set-value");
 
-    row_update_handler(row_obj, step_id, set_value); // set_value is 2, or "Done"
+    row_update_handler(row_obj, step_id, set_value);
 
     e.preventDefault();
+});
+
+$("body").on("click", ".topic-email-reminder-box .btn-group-toggle input", function (e) {
+    let new_value = $(".topic-email-reminder-box label.active input").data("button-value");
+    let topic_id = $(".topic-email-reminder-box").data("topic-id");
+
+    $(".btn-group-toggle input").attr("disabled", true);
+
+    $.ajax("/topics/update_subscription", {
+        method: 'post',
+        data: {
+            topic_id: topic_id,
+            subscription: new_value
+        },
+        success: function() {
+            $(".btn-group-toggle input").attr("disabled", false);
+            $(".subscription-error").text("");
+        },
+        error: function() {
+            console.log("Error setting subscription...")
+            $(".btn-group-toggle input").attr("disabled", false);
+            $(".subscription-error").text("Error setting subscription!");
+        }
+    });
 });

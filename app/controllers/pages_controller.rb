@@ -4,4 +4,7 @@ class PagesController < ApplicationController
 
   def feedback
   end
+
+  def profile
+  end
 end
