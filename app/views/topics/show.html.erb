@@ -16,7 +16,7 @@
   <div class="topic-email-reminder-box" data-topic-id="<%= @topic.id %>">
       <% if current_user %>
         <%= link_to("Email Reminders", "/profile") %> for this topic:
-        <%= bootstrap_button_group(UserTopicItem::SUBSCRIPTION_VALUES, selected: @ut ? @ut.subscription : "none") %>
+        <%= email_reminder_button_group(selected: @ut ? @ut.subscription : "none") %>
         <div class="subscription-error"></div>
       <% else %>
         (Log in to track progress or opt into emailed reminders.)

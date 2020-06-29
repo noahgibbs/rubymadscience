@@ -46,7 +46,7 @@
     margin: 10px;
 }
 
-.step-row,.topic-recommendations-row,.steps-title-row,.topic-email-reminder-box {
+.step-row,.topic-recommendations-row,.steps-title-row,.topic-email-reminder-box,.profile-topic-row {
     padding: 1em;
     max-width: 800px;
     border-radius: 10px;
@@ -121,4 +121,16 @@
 
 .topic-email-reminder-box .btn-group {
     margin-left: 20px;
+}
+
+.profile-topic-row {
+    background: #F5FBFF;
+    border: 1px solid #A0A0A0;
+}
+
+.profile-email-reminder-box {
+}
+
+.profile-reminder-disclaimers {
+    font-size: 60%;
 }

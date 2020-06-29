@@ -1,5 +1,6 @@
 module TopicsHelper
-    def bootstrap_button_group(options, selected:nil, top_classes: "")
+    def email_reminder_button_group(selected:nil)
+        options = UserTopicItem::SUBSCRIPTION_VALUES
         all_options = options.map { |value, name|
             <<HTML
 <label class="btn btn-primary#{ value == selected ? " active" : "" }">
@@ -10,7 +11,7 @@ HTML
         }.join("\n")
 
         h = <<HTML
-<div class="btn-group btn-group-toggle #{top_classes}" data-toggle="buttons">
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
 #{all_options}
 </div>
 HTML

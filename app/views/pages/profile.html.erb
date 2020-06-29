@@ -1,0 +1,54 @@
+<div class="container">
+    <h1>Profile</h1>
+
+    <% if current_user %>
+
+        <p>
+            Logged in as <%= current_user.email %>
+        </p>
+
+        <h2>My Email Reminders</h2>
+
+        <div class="profile-reminder-disclaimers text-muted">
+            <p>
+                You'll get email reminders for any topic where you pick a frequency other than "none."
+            </p>
+
+            <p>
+                You should only get one email per period. That is, three weekly topic reminders will normally
+                all arrive on the same day, and a weekly plus a daily is seven per week, not eight.
+            </p>
+
+            <p>
+                Please allow up to a few hours for a subscription or unsubscription to be processed. Batch
+                jobs and email providers can have delays.
+            </p>
+        </div>
+
+        <% @topic_items.each_with_index do |topic_item, index| 
+            topic = @topics[index] %>
+            <div class="profile-topic-row">
+                <div class="topic-thumbnail">
+                    <a href="/topics/show?id=<%= topic.id %>">
+                        <img src="<%= topic.thumbnail_url %>" width="200" height="125" alt="<%= topic.name %>" />
+                    </a>
+                </div>
+
+                <div class="topic-index-text">
+                    <a href="/topics/show?id=<%= topic.id %>"><h3 class="text-primary"><%= topic.name %></h3></a>
+                </div>
+
+                <div>
+                    Email Reminders:
+                    <%= email_reminder_button_group(selected: topic_item.subscription) %>
+                    <div class="subscription-error"></div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        <% end %>
+    <% else %>
+        <p>
+            <%= link_to("Log in", new_user_session_path()) %> to view your email reminders.
+        </p>
+    <% end %>
+</div>
