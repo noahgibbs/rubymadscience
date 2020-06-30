@@ -10,7 +10,7 @@
         <% if current_user.confirmed_at && !current_user.pending_reconfirmation? %>
         <% else %>
             <p>
-                <%= link_to "Didn't receive your (re)confirmation email?", new_user_confirmation_path(current_user) %>
+                <%= link_to "Didn't receive your (re)confirmation email?", new_user_confirmation_path %>
             </p>
         <% end %>
 
