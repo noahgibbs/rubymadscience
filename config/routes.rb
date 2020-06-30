@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   post 'topics/update_subscription'
   post 'steps/update_done'
 
-  devise_for :users, path: :auth
+  devise_for :users, path: :auth, controllers: {
+    confirmations: 'users/confirmations',
+  }
 end

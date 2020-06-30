@@ -4,8 +4,15 @@
     <% if current_user %>
 
         <p>
-            Logged in as <%= current_user.email %>
+            Email: <%= current_user.email %> <%= current_user.pending_reconfirmation? ? "(pending reconfirm)" : (current_user.confirmed_at ? "(confirmed)" : "(not confirmed)") %>
         </p>
+
+        <% if current_user.confirmed_at && !current_user.pending_reconfirmation? %>
+        <% else %>
+            <p>
+                <%= link_to "Didn't receive your (re)confirmation email?", new_user_confirmation_path(current_user) %>
+            </p>
+        <% end %>
 
         <h2>My Email Reminders</h2>
 
@@ -48,7 +55,7 @@
         <% end %>
     <% else %>
         <p>
-            <%= link_to("Log in", new_user_session_path()) %> to view your email reminders.
+            <%= link_to("Log in", new_user_session_path()) %> to view your profile and email reminders.
         </p>
     <% end %>
 </div>
