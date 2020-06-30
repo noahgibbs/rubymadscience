@@ -59,21 +59,24 @@ class Topic
             unless STEP_TYPES.map(&:to_s).include?(step_objs["type"])
                 raise("Illegal type #{step_objs["type"].inspect} for step object!")
             end
-            StepStruct.new name: step_objs["name"],
-                desc: step_objs["desc"],
-                url: step_objs["url"],
-                id: "#{id}/#{step_objs["id"]}",
-                type: step_objs["type"],
-                data: step_objs["data"]
+            StepStruct.new name: step_objs["name"].freeze,
+                desc: step_objs["desc"].freeze,
+                url: step_objs["url"].freeze,
+                id: "#{id}/#{step_objs["id"]}".freeze,
+                type: step_objs["type"].freeze,
+                data: step_objs["data"].freeze
         end
+        steps.map(&:freeze)
 
         args = {}
-        TOPIC_KEYS.each { |tk| args[tk] = raw_objs[tk.to_s] }
-        TopicStruct.new args.merge({
-            steps: steps,
-            id: id,
-            created_at: created,
-            updated_at: updated
+        TOPIC_KEYS.each { |tk| args[tk] = raw_objs[tk.to_s].freeze }
+        ts = TopicStruct.new args.merge({
+            steps: steps.freeze,
+            id: id.freeze,
+            created_at: created.freeze,
+            updated_at: updated.freeze,
             })
+        ts.freeze
+        ts
     end
 end
