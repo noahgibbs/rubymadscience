@@ -19,17 +19,35 @@ class Topic
         # Helper methods can go here
     end
 
+    def self.topic_from_file(topic_file)
+        @file_cache ||= {}
+        if @file_cache[topic_file] && @file_cache[topic_file][:mtime] == File.mtime(topic_file)
+            return @file_cache[topic_file][:topic]
+        end
+        ct = File.ctime(topic_file)
+        mt = File.mtime(topic_file)
+        tid = File.basename(topic_file, ".json")
+        t = load_topic_from_json(File.read(topic_file), created: ct, updated: mt, id: tid)
+        @file_cache[topic_file] = {
+            ctime: ct,
+            mtime: mt,
+            topic: t,
+            id: tid,
+        }
+        t
+    end
+
     def self.all
         root_path = File.join(TOPIC_ROOT, "*.json")
         objs = Dir[root_path].map do |topic_file|
-            load_topic_from_json(File.read(topic_file), created: File.ctime(topic_file), updated: File.mtime(topic_file), id: File.basename(topic_file, ".json"))
+            topic_from_file(topic_file)
         end
         objs
     end
 
     def self.find(topic_id)
         filename = File.join(TOPIC_ROOT, "#{topic_id.downcase}.json")
-        load_topic_from_json(File.read(filename), created: File.ctime(filename), updated: File.mtime(filename), id: topic_id)
+        topic_from_file(filename)
     end
 
     def self.load_topic_from_json(json_string_data, created:, updated:, id:)
