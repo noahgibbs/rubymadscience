@@ -6,9 +6,4 @@ class TopicsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get show" do
-    get topics_show_url
-    assert_response :success
-  end
-
 end

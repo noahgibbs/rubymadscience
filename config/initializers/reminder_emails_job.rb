@@ -1,5 +1,7 @@
 require "sidekiq/api"
 
+require_relative "../../app/workers/reminder_emails"
+
 ss = Sidekiq::ScheduledSet.new
 
 # Make sure we have exactly one ReminderEmails job queued.
