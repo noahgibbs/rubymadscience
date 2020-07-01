@@ -1,6 +1,6 @@
 Honeycomb.configure do |config|
   config.write_key = Rails.application.credentials.honeycomb[:api_key]
-  config.dataset = "rails"
+  config.dataset = "RubyMadScience"
   config.presend_hook do |fields|
     if fields["name"] == "redis" && fields.has_key?("redis.command")
       # remove potential PII from the redis command
