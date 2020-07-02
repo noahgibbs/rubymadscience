@@ -7,6 +7,6 @@ class ReminderEmails
 
         ss = Sidekiq::ScheduledSet.new
         ss.each { |job| job.delete if job.klass == 'ReminderEmails' }
-        ReminderEmails.perform_in(1.minute)
+        ReminderEmails.perform_at(Time.now.advance(days: 1).middle_of_day + rand(2000))
     end
 end

@@ -8,7 +8,7 @@ ss = Sidekiq::ScheduledSet.new
 # Start it quickly after boot to send off any overdue reminders.
 
 ss.each { |job| job.delete if job.klass == 'ReminderEmails' }
-ReminderEmails.perform_in(3.minutes)
+ReminderEmails.perform_in(3.minutes + rand(2000))
 
 # With multiple processes, we might accidentally get multiple ReminderEmails jobs.
 # That's not perfect but not a big deal.
