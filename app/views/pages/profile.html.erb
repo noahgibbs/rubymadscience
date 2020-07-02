@@ -1,3 +1,5 @@
+<%= javascript_pack_tag 'steps' %>
+
 <div class="container">
     <h1>Profile</h1>
 
@@ -34,7 +36,7 @@
 
         <% @topic_items.each_with_index do |topic_item, index| 
             topic = @topics[index] %>
-            <div class="profile-topic-row">
+            <div class="profile-topic-row" data-topic-id="<%= topic.id %>">
                 <div class="topic-thumbnail">
                     <a href="/topics/show?id=<%= topic.id %>">
                         <img src="<%= topic.thumbnail_url %>" width="200" height="125" alt="<%= topic.name %>" />
@@ -49,8 +51,8 @@
                     Email Reminders:
                     <%= email_reminder_button_group(selected: topic_item.subscription) %>
                     <div class="subscription-error"></div>
-                    <div class="clearfix"></div>
                 </div>
+                <div class="clearfix"></div>
             </div>
         <% end %>
     <% else %>
