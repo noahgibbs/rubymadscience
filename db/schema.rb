@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_02_224820) do
+ActiveRecord::Schema.define(version: 2020_07_05_103436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2020_07_02_224820) do
     t.string "note"
     t.integer "user_id"
     t.string "step_id"
+    t.string "topic_id"
     t.index ["user_id", "step_id"], name: "index_user_step_items_on_user_id_and_step_id"
   end
 

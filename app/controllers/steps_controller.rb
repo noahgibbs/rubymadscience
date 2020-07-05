@@ -3,8 +3,9 @@ class StepsController < ApplicationController
   def update_done
     user_id = current_user.id
     step_id = params[:step_id]
+    topic_id = step_id.split("/", 2)[0]
     if user_id && step_id
-        usi = UserStepItem.find_or_create_by(user_id: current_user.id, step_id: step_id)
+        usi = UserStepItem.find_or_create_by(user_id: current_user.id, step_id: step_id, topic_id: topic_id)
         usi.doneness = params[:done]
         usi.note = params[:note]
         saved = usi.save
