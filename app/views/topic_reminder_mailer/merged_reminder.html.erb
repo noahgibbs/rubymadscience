@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>You Wanted to be Reminded&hellip;</h1>
+
+    <p>
+      PLACEHOLDER: REMINDERS
+    </p>
+
+    <p>
+      You've received this email because you specifically opted into reminder
+      emails on RubyMadScience.com. To change your preferences or unsubscribe,
+      please log in and visit <%= link_to("your profile page", controller: :pages, action: :profile) %>.
+    </p>
+    <p>
+      You can also unsubscribe from all reminders directly from this email
+      by <%= link_to("clicking this link", :action => "unsub_all") %>.
+    </p>
+  </body>
+</html>
