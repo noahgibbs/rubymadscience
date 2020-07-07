@@ -9,7 +9,6 @@ class TopicsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index while signed in" do
-    #@request.env["devise.mapping"] = Devise.mappings[:user]
     sign_in users(:admin)
     get topics_index_url
     assert_response :success
