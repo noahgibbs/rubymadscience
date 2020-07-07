@@ -15,11 +15,15 @@ class UserCreationAndValidationTest < ActionDispatch::IntegrationTest
         post user_session_url,
             params: {
                 user: {
-                    email: "the.codefolio.guy+rms@gmail.com",
+                    email: "the.codefolio.guy+rubymadscience@rubymadscience.com",
                     password: "password"
                 }
             }
+        assert_response :redirect
+        follow_redirect!
         assert_response :success
+        assert controller.send(:current_user), "No user was logged in successfully!"
+        assert_equal "the.codefolio.guy+rubymadscience@rubymadscience.com", controller.send(:current_user).email
     end
 
     test "Can sign up as new user" do
@@ -44,6 +48,8 @@ class UserCreationAndValidationTest < ActionDispatch::IntegrationTest
         assert_response :redirect
         follow_redirect!
         assert_response :success
+        assert controller.send(:current_user), "No user was logged in successfully!"
+        assert_equal "newperson@example.com", controller.send(:current_user).email
 
         new_user = User.where(email: "newperson@example.com").first
         assert new_user, "New user was not created!"
@@ -52,5 +58,43 @@ class UserCreationAndValidationTest < ActionDispatch::IntegrationTest
         assert_response :redirect
         follow_redirect!
         assert_response :success
+    end
+
+    test "Unconfirmed user login works" do
+        get new_user_registration_url
+        assert_response :success
+
+        assert_equal 0, ActionMailer::Base.deliveries.size
+        post user_session_url,
+            params: {
+                user: {
+                    email: "the.codefolio.guy+unconfirmed@rubymadscience.com",
+                    password: "password",
+                    password_confirmation: "password",
+                }
+            }
+        assert_response :redirect
+        follow_redirect!
+        assert_response :success
+
+        assert controller.send(:current_user), "No user was logged in successfully!"
+        assert_equal "the.codefolio.guy+unconfirmed@rubymadscience.com", controller.send(:current_user).email
+    end
+
+    test "Resend confirmation works" do
+        sign_in users(:unconfirmed)
+        get new_user_confirmation_url
+        assert_response :success
+
+        assert_equal 0, ActionMailer::Base.deliveries.size
+        post user_confirmation_url,
+            params: { user: { email: "the.codefolio.guy+unconfirmed@rubymadscience.com" } }
+        assert_response :redirect
+        follow_redirect!
+        assert_response :success
+        assert_select ".field_with_errors", false
+        assert_select ".rails-notice", "You will receive an email with instructions for how to confirm your email address in a few minutes."
+
+        assert_equal 1, ActionMailer::Base.deliveries.size
     end
 end
