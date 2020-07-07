@@ -18,6 +18,10 @@
 
         <h2 class="profile-email-reminders">My Email Reminders</h2>
 
+        <% if @topic_items.size == 0 %>
+            <h3>You Aren't Subscribed to Any Topics.</h3>
+        <% end %>
+
         <div class="profile-reminder-disclaimers text-muted">
             <p>
                 You'll get email reminders for any topic where you pick a frequency other than "none."
