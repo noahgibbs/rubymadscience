@@ -1,0 +1,47 @@
+{
+    "name": "Rails Internals",
+    "desc": "Structure and internals of Ruby on Rails. Learn how to peek under the covers of your framework.",
+    "thumbnail_url": "/img/rails_internals_thumb.png",
+    "bigthumb_url":  "/img/rails_internals_bigthumb.png",
+    "fullsize_url":  "/img/rails_internals_fullsize.png",
+    "data": {
+    },
+    "steps": [
+        {
+            "name": "Understanding the Structure of Rails",
+            "url": "https://codefol.io/posts/Understanding-the-Structure-of-Rails/",
+            "id": "1",
+            "type": "blog",
+            "desc": "Before digging into Rails' own code, it's important to know how the library is structured. The Rails gem has a number of sub-gems that you should know by name&hellip;",
+            "data": {
+            }
+        },
+        {
+            "name": "Where Do I Put My Code in Rails?",
+            "url": "https://codefol.io/posts/where-do-i-put-my-code-in-rails-updated/",
+            "id": "2",
+            "type": "blog",
+            "desc": "Rails is an MVC framework, but not every piece of code is a model, a view or a controller. What kind of code goes in what directories? What types of objects hold each one?",
+            "data": {
+            }
+        },
+        {
+            "name": "How Does Rack Parse Query Params?",
+            "url": "https://codefol.io/posts/How-Does-Rack-Parse-Query-Params-With-parse-nested-query/",
+            "id": "3",
+            "type": "blog",
+            "desc": "You may know that Rails will parse your query parameters for you - including parameter names like a[] which can automatically create arrays. How does Rails do that? Where does the code live?",
+            "data": {
+            }
+        },
+        {
+            "name": "Understanding HashWithIndifferentAccess",
+            "url": "https://codefol.io/posts/Deep-Rails-Understanding-HashWithIndifferentAccess-Understanding-the-Params-Hash/",
+            "id": "4",
+            "type": "blog",
+            "desc": "Rails' params object is a little unusual. You can say param[:foo] or params['foo'] and both work. How does it do that?",
+            "data": {
+            }
+        }
+    ]
+}

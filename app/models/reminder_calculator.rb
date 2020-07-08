@@ -1,3 +1,5 @@
+require "time"
+
 # No reason that the User email reminder logic can't live
 # a simple, separate PORO.
 
@@ -44,25 +46,33 @@ module ReminderCalculator
     # levels of abstraction. Separating this logic from
     # its models has been messy and could likely be done
     # better.
-    def unfinished_topics(topic_ids, step_completions)
+
+    # Step_completions is a list of items that look like
+    # UserStepItems - they have accessors for topic_id and
+    # step_id, and if passed in are assumed to correspond
+    # to "yes, this step is complete (or skipped.)"
+    def next_step_by_topic_id(topic_ids, step_completions)
         topic_steps = {}
         topic_ids.each do |topic_id|
             topic = Topic.find(topic_id)
             topic_steps[topic_id] = {}
             topic.steps.each do |step|
-                topic_steps[topic_id][step.id] = false
+                topic_steps[topic_id][step.id] = true
             end
         end
 
         step_completions.each do |completion|
-            topic_steps[completion.topic_id][completion.step_id] = true
+            topic_steps[completion.topic_id].delete(completion.step_id)
         end
 
-        # Choose only those topic IDs that have at least one unfinished step
-        unfinished = topic_steps.keys.select do |topic_id|
-            topic_steps[topic_id].any? { |step_id, is_done| is_done == false }
+        next_by_topic_id = {}
+        topic_steps.each do |topic_id, unfinished_steps|
+            unless unfinished_steps.empty?
+                first_unfinished, t = *unfinished_steps.first
+                next_by_topic_id[topic_id] = first_unfinished
+            end
         end
 
-        unfinished
+        next_by_topic_id
     end
 end

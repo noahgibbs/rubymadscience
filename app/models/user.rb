@@ -31,6 +31,6 @@ class User < ApplicationRecord
     # First, get all relevant step items for this user
     step_items = self.user_step_items.where(topic_id: due_topics, doneness: [1, 2])
 
-    unfinished_topics = self.unfinished_topics(due_topics, step_items)
+    next_step_by_topic_id = self.next_step_by_topic_id(due_topics, step_items)
   end
 end

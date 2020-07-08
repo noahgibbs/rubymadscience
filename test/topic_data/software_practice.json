@@ -1,0 +1,48 @@
+{
+    "name": "Software Practice",
+    "desc": "Writing software is a practical, experience-based skill like playing tennis, riding a bike or playing music. You get better by practicing. Like those other skills, it matters <i>how</i> you practice. This topic is all about how to practice and improve at writing software.",
+    "thumbnail_url": "/img/chimp_keyboard_thumb.png",
+    "bigthumb_url":  "/img/chimp_keyboard_bigthumb.png",
+    "fullsize_url":  "/img/chimp_keyboard_fullsize.png",
+    "data": {
+        "related": ["coding_studies"]
+    },
+    "steps": [
+        {
+            "name": "Practice Deeply and Consciously",
+            "url": "https://codefol.io/posts/practice-deeply-and-consciously/",
+            "id": "practice-deeply-and-consciously",
+            "type": "blog",
+            "desc": "When we talk about practice, what makes good practice? How should we practice to get the best results? The answers are simple, but not always easy.",
+            "data": {
+            }
+        },
+        {
+            "name": "Practice Software Technique with a Single Idea and a Time Limit",
+            "url": "https://codefol.io/posts/single-idea-with-time-limit/",
+            "id": "single-idea-with-time-limit",
+            "type": "blog",
+            "desc": "Are you practicing your coding? Here are a couple of ways to get better, faster.",
+            "data": {
+            }
+        },
+        {
+            "name": "The Fear of Wasted Practice Time",
+            "url": "https://codefol.io/posts/fear-of-wasted-practice-time/",
+            "id": "fear-of-wasted-practice-time",
+            "type": "blog",
+            "desc": "Sometime your big obstacle in practice is the fear of doing it wrong. Here's what to do about that.",
+            "data": {
+            }
+        },
+        {
+            "name": "How to Commit to Mastery",
+            "url": "https://codefol.io/posts/how-to-commit-to-mastery/",
+            "id": "how-to-commit-to-mastery",
+            "type": "blog",
+            "desc": "The hard part of mastering a skill is putting in <i>consistent</i> work, and making the commitment to do it. Let's talk about how to that. And why you should hate Matt Bird with a burning passion.",
+            "data": {
+            }
+        }
+    ]
+}

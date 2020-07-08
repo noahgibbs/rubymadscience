@@ -2,7 +2,7 @@ class Topic
     TOPIC_KEYS = [:name, :desc, :thumbnail_url, :bigthumb_url, :fullsize_url, :id, :data, :steps, :created_at, :updated_at]
     STEP_KEYS = [:name, :desc, :url, :id, :type, :data]
     STEP_TYPES = [:video, :blog, :blog_and_video]
-    TOPIC_ROOT = File.join(Rails.root, "app", "models", "topics")
+    DEFAULT_TOPIC_ROOT = File.join(Rails.root, "app", "models", "topics")
 
     # This is how we do the view mapping of type to output markup
     PARTIAL_BY_TYPE = {
@@ -17,6 +17,14 @@ class Topic
 
     StepStruct = Struct.new(*STEP_KEYS, keyword_init: true) do
         # Helper methods can go here
+    end
+
+    def self.topic_root=(new_root)
+        @topic_root = new_root
+    end
+
+    def self.topic_root
+        @topic_root ||= DEFAULT_TOPIC_ROOT
     end
 
     def self.topic_from_file(topic_file)
@@ -38,7 +46,7 @@ class Topic
     end
 
     def self.all
-        root_path = File.join(TOPIC_ROOT, "*.json")
+        root_path = File.join(topic_root, "*.json")
         objs = Dir[root_path].map do |topic_file|
             topic_from_file(topic_file)
         end
@@ -46,7 +54,7 @@ class Topic
     end
 
     def self.find(topic_id)
-        filename = File.join(TOPIC_ROOT, "#{topic_id.downcase}.json")
+        filename = File.join(topic_root, "#{topic_id.downcase}.json")
         topic_from_file(filename)
     end
 
@@ -54,6 +62,10 @@ class Topic
         raw_objs = JSON.load(json_string_data)
         illegal_keys = raw_objs.keys - TOPIC_KEYS.map(&:to_s)
         raise("Illegal keys in topic: #{illegal_keys.inspect}!") unless illegal_keys.empty?
+
+        step_ids = raw_objs["steps"].map { |so| so["id"] }
+        dup_ids = step_ids.select{ |e| step_ids.count(e) > 1 }.uniq
+        raise("Duplicate step IDs in topic: #{dup_ids.inspect}!") unless dup_ids.empty?
 
         steps = raw_objs["steps"].map do |step_objs|
             unless STEP_TYPES.map(&:to_s).include?(step_objs["type"])
