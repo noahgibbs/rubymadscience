@@ -3,7 +3,10 @@ class ReminderEmails
     include Sidekiq::Worker
 
     def perform
-
+        User.each do |u|
+            remind_steps = u.next_steps_to_remind_at_time(Time.now)
+            TopicReminderMailer.with(remind_topics: remind_steps, user_id: u.id).merged_reminder.deliver_later
+        end
 
         ss = Sidekiq::ScheduledSet.new
         ss.each { |job| job.delete if job.klass == 'ReminderEmails' }

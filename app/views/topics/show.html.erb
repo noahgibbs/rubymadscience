@@ -34,7 +34,7 @@
             doneness = user_step_item.doneness if user_step_item
         end
         %>
-        <div class="step-row" data-server-value="<%= doneness %>">
+        <div class="step-row" data-server-value="<%= doneness %>" id="<%= step.id %>">
             <h3><%= step.name %></h3>
 
             <%= render "step", step: step %>

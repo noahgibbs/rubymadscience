@@ -4,20 +4,36 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>You Wanted to be Reminded&hellip;</h1>
+    <h1>You Asked to be Reminded&hellip;</h1>
 
     <p>
-      PLACEHOLDER: REMINDERS
+      You subscribed to the following topics that you haven't completed, or that
+      have added new content:
     </p>
+
+    <table>
+      <% @remind_topics.each do |topic, next_step| %>
+        <tr>
+          <td>
+            <img src="<%= topic.thumbnail_url %>" width="200" height="125" alt="<%= topic.name %>" />
+          </td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>
+            <a href="<%= @url_by_topic[topic] %>"><h2><%= topic.name %> </h2></a>
+            <p>(remind me: <%= @topic_frequency[topic] %>)</p>
+            <a href="<%= @url_by_topic[topic] %>"><h3><%= next_step.name %></h3></a>
+            <p>
+              <%= next_step.desc %>
+            </p>
+          </td>
+        </tr>
+      <% end %>
+    </table>
 
     <p>
       You've received this email because you specifically opted into reminder
       emails on RubyMadScience.com. To change your preferences or unsubscribe,
       please log in and visit <%= link_to("your profile page", controller: :pages, action: :profile) %>.
-    </p>
-    <p>
-      You can also unsubscribe from all reminders directly from this email
-      by <%= link_to("clicking this link", :action => "unsub_all") %>.
     </p>
   </body>
 </html>

@@ -16,7 +16,7 @@ class TopicsController < ApplicationController
 
   def update_subscription
     user = current_user
-    return render(plain: "No such user found", status: 404) unless user
+    return render(plain: "No such user found! Are you logged in?", status: 404) unless user
 
     subscription = params[:subscription]  # "none", "daily", "weekly", "monthly"
     return render(plain: "Not a valid subscription value", status: 400) unless UserTopicItem::SUBSCRIPTION_VALUES[subscription]

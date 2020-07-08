@@ -1,12 +1,20 @@
-You Wanted to be Reminded...
+You Asked to be Reminded...
 ============================
 
-PLACEHOLDER: REMINDERS
+You subscribed to the following topics that you haven't completed, or that
+have added new content:
+
+<%= @remind_topics.each do |topic, next_step| %>
+
+# Topic: <%= topic.name %> (remind me: <%= @topic_frequency[topic] %>)
+-> <%= next_step.name %>:
+
+<%= next_step.desc %>
+
+(URL: <%= @url_by_topic[topic] %>)
+<% end %>
 
 You've received this email because you specifically opted into reminder
 emails on RubyMadScience.com. To change your preferences or unsubscribe,
 please log in and visit your profile page at
 "<%= url_for(controller: :pages, action: :profile) %>"
-
-You can also unsubscribe from all reminders at the following URL:
-<%= url_for(action: :unsub_all) %>
