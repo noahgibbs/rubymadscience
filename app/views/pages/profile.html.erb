@@ -53,6 +53,7 @@
 
                 <div>
                     Email Reminders:
+                    <!-- Selected: <%= topic_item.subscription.inspect %> -->
                     <%= email_reminder_button_group(selected: topic_item.subscription) %>
                     <div class="subscription-error"></div>
                 </div>

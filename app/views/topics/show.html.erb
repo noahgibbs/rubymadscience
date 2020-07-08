@@ -16,6 +16,7 @@
   <div class="topic-email-reminder-box" data-topic-id="<%= @topic.id %>">
       <% if current_user %>
         <%= link_to("Email Reminders", "/profile") %> for this topic:
+        <!-- Selected: <%= @ut ? @ut.subscription.inspect : "none" %>  -->
         <%= email_reminder_button_group(selected: @ut ? @ut.subscription : "none") %>
         <div class="subscription-error"></div>
       <% else %>
