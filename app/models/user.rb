@@ -13,7 +13,7 @@ class User < ApplicationRecord
 
   # Get the list of topic IDs that this user will want to be
   # reminded about as of send-time t
-  def topics_to_remind_at_time(t)
+  def next_steps_to_remind_at_time(t)
     topic_items = self.user_topic_items
 
     topics = {}

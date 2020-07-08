@@ -1,0 +1,6 @@
+
+uti1:
+  user: reminder_tester
+  topic_id: coding_studies
+  subscription: daily
+  last_reminder: 2020-07-01 14:40
