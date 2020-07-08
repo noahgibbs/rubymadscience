@@ -29,7 +29,8 @@ class TopicsController < ApplicationController
         success = ut.save
     else
         ut = scope.create
-        success = ut.persisted?
+        ut.subscription = subscription
+        success = ut.save
     end
 
     if success
