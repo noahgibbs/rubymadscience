@@ -7,6 +7,9 @@ class UserTopicItem < ApplicationRecord
         "weekly" => "Weekly",
         "monthly" => "Monthly",
     }
-
+    if Rails.env.development?
+        SUBSCRIPTION_VALUES["constantly"] = "Constantly"
+    end
+    SUBSCRIPTION_VALUES.freeze
 
 end

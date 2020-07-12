@@ -1,6 +1,10 @@
 class TopicReminderMailer < ApplicationMailer
   def merged_reminder
-    @user = params[:user]
+    @user = User.find(params[:user_id])
+    unless @user
+        STDERR.puts "Couldn't find user #{params[:user_id].inspect}"
+        return
+    end
     @remind_topics = {}
     @topic_frequency = {}
     @url_by_topic = {}
@@ -16,6 +20,8 @@ class TopicReminderMailer < ApplicationMailer
                 "#" + next_step_id
         end
     end
-    mail(subject: "Your Scheduled Reminder from RubyMadScience.com")
+    mail(#from: "the.codefolio.guy+rubymadscience@gmail.com",
+         to: @user.email,
+         subject: "Your Scheduled Reminder from RubyMadScience.com")
   end
 end

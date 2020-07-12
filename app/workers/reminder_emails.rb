@@ -1,15 +1,22 @@
-# app/workers/reminder_emails.rb
 class ReminderEmails
     include Sidekiq::Worker
 
     def perform
-        User.each do |u|
+        User.all.each do |u|
             remind_steps = u.next_steps_to_remind_at_time(Time.now)
-            TopicReminderMailer.with(remind_topics: remind_steps, user_id: u.id).merged_reminder.deliver_later
+            next if remind_steps.empty?
+            UserTopicItem.transaction do
+                remind_steps.keys.each do |topic_id|
+                    ut = UserTopicItem.where(user_id: u.id, topic_id: topic_id).first
+                    ut.last_reminder = Time.now
+                    ut.save!
+                end
+                TopicReminderMailer.with(remind_topics: remind_steps, user_id: u.id).merged_reminder.deliver
+            end
         end
 
         ss = Sidekiq::ScheduledSet.new
         ss.each { |job| job.delete if job.klass == 'ReminderEmails' }
-        ReminderEmails.perform_at(Time.now.advance(days: 1).middle_of_day + rand(2000))
+        ReminderEmails.perform_in(10.minutes)
     end
 end
