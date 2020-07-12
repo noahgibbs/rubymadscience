@@ -5,3 +5,11 @@
 * Update master branches? https://andre.arko.net/2020/06/26/automatically-update-every-github-default-branch/
 * https://github.com/mperham/sidekiq/wiki/Active-Job
 
+Honeybadger optional:
+  - Show a feedback form on your error page:
+    https://docs.honeybadger.io/gem-feedback
+  - Show a UUID or link to Honeybadger on your error page:
+    https://docs.honeybadger.io/gem-informer
+  - Track deployments (if you're using Capistrano, we already did this):
+    https://docs.honeybadger.io/gem-deploys
+

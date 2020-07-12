@@ -91,6 +91,7 @@ GEM
       rake
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    honeybadger (4.7.0)
     honeycomb-beeline (2.1.0)
       libhoney (~> 1.14, >= 1.14.2)
     http (4.4.1)
@@ -247,6 +248,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   devise
+  honeybadger (~> 4.0)
   honeycomb-beeline (~> 2.1.0)
   jbuilder (~> 2.7)
   listen (~> 3.2)
