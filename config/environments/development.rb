@@ -38,6 +38,8 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+  config.active_job.queue_adapter = :sidekiq
+
   # For now, use a real mailer. This may need to change later.
   # Sendgrid config based on: https://sendgrid.com/docs/for-developers/sending-email/rubyonrails/
   config.action_mailer.delivery_method = :smtp

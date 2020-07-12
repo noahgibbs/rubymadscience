@@ -3,4 +3,5 @@
 * Need Turbolinks/Devise integration? https://github.com/heartcombo/devise/pull/4678
   https://www.oarod.com/2017/01/29/turbolinks-with-devise/
 * Update master branches? https://andre.arko.net/2020/06/26/automatically-update-every-github-default-branch/
+* https://github.com/mperham/sidekiq/wiki/Active-Job
 
