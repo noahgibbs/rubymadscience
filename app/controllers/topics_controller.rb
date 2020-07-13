@@ -21,8 +21,11 @@ class TopicsController < ApplicationController
     subscription = params[:subscription]  # "none", "daily", "weekly", "monthly"
     return render(plain: "Not a valid subscription value", status: 400) unless UserTopicItem::SUBSCRIPTION_VALUES[subscription]
 
+    topic = Topic.find(params[:topic_id])
+    return render(plain: "No such topic ID", status: 404) unless topic
+
     success = false
-    scope = UserTopicItem.where(user_id: user.id, topic_id: params[:topic_id])
+    scope = UserTopicItem.where(user_id: user.id, topic_id: topic.id)
     ut = scope.first
     if ut
         ut.subscription = subscription
