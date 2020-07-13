@@ -67,13 +67,15 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     user_name: "apikey",
-    api_key: Rails.application.credentials.sendgrid[:api_key],
+    password: Rails.application.credentials.sendgrid[:api_key],
     domain: "rubymadscience.com",
     address: "smtp.sendgrid.net",
     port: 465,
     authentication: :plain,
-    enable_starttls_auto: :true,
+    enable_starttls_auto: true,
+    tls: true,
   }
+
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
