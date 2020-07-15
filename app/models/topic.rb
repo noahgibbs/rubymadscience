@@ -32,6 +32,7 @@ class Topic
         if @file_cache[topic_file] && @file_cache[topic_file][:mtime] == File.mtime(topic_file)
             return @file_cache[topic_file][:topic]
         end
+        return nil unless File.exist?(topic_file)
         ct = File.ctime(topic_file)
         mt = File.mtime(topic_file)
         tid = File.basename(topic_file, ".json")

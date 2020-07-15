@@ -5,6 +5,7 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
+    return render(plain: "No such topic as #{params[:id].inspect} found!", status: 404) unless @topic
     if current_user
         step_ids = @topic.steps.map(&:id)
         @ut = UserTopicItem.where(user_id: current_user.id, topic_id: @topic.id).first
