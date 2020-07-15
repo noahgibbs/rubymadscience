@@ -80,14 +80,11 @@
     </div>
     <script type="text/javascript">
         var disqus_config = function () {
-            // Replace PAGE_URL with your page's canonical URL variable
             this.page.url = '<%= disqus_url_for_topic_id(@topic.id) %>';
-
-            // Replace PAGE_IDENTIFIER with your page's unique identifier variable
             this.page.identifier = '<%= disqus_url_for_topic_id(@topic.id) %>';
         };
 
-        var disqus_shortname = 'rubymadscience';
+        var disqus_shortname = 'computermadscience';
         var disqus_developer = 0;
         (function () {
             var dsq = document.createElement('script');

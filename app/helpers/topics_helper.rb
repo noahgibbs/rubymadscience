@@ -19,6 +19,6 @@ HTML
     end
 
     def disqus_url_for_topic_id(topic_id)
-        "https://rubymadscience.com/topics/#{topic_id}"
+        "https://computermadscience.com/topics/#{topic_id}"
     end
 end
