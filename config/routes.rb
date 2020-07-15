@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root 'topics#index'
   get '/topics' => 'topics#index'
   get 'topics/index'
-  get 'topics/show'
+  get 'topics/:id', to: "topics#show"
 
   post 'topics/update_subscription'
   post 'steps/update_done'

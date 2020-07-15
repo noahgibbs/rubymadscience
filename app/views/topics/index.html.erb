@@ -19,9 +19,13 @@
           <%= topic.desc.html_safe %>
         </p>
 
-        <a href="/topics/show?id=<%= topic.id %>"><button type="button" class="btn btn-primary">Show Me</button></a>
+        <a href="<%= url_for(action: :show, id: topic.id) %>">
+          <button type="button" class="btn btn-primary">Show Me</button></a>
 
-        <p class="text-muted topic-index-metadata">Last Update: <%= topic.updated_at.strftime("%Y-%m-%d") %> - XX comments</p>
+        <p class="text-muted topic-index-metadata">Last Update: <%= topic.updated_at.strftime("%Y-%m-%d") %>
+          -
+          <a href="<%= url_for(action: :show, id: topic.id, anchor: "disqus_thread") %>" data-disqus-identifier="<%= disqus_url_for_topic_id(topic.id) %>">Comments</a>
+        </p>
       </div>
       <hr/>
     </div>

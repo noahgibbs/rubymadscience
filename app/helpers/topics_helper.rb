@@ -17,4 +17,8 @@ HTML
 HTML
         h.html_safe
     end
+
+    def disqus_url_for_topic_id(topic_id)
+        "https://rubymadscience.com/topics/#{topic_id}"
+    end
 end
