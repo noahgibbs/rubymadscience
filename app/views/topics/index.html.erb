@@ -7,13 +7,13 @@
   <% @topics.each do |topic| %>
     <div class="topic-row">
       <div class="topic-thumbnail">
-        <a href="/topics/show?id=<%= topic.id %>">
+        <a href="<%= url_for(action: :show, id: topic.id) %>">
           <img src="<%= topic.thumbnail_url %>" width="200" height="125" alt="<%= topic.name %>" />
         </a>
       </div>
 
       <div class="topic-index-text">
-        <a href="/topics/show?id=<%= topic.id %>"><h3 class="text-primary"><%= topic.name %></h3></a>
+        <a href="<%= url_for(action: :show, id: topic.id) %>"><h3 class="text-primary"><%= topic.name %></h3></a>
 
         <p>
           <%= topic.desc.html_safe %>
