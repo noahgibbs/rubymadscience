@@ -3,7 +3,7 @@
 * https://github.com/mperham/sidekiq/wiki/Active-Job
 
 * Set up email at a custom domain, where it should be
-* LetsEncrypt properly set up
+* EU cookies
 
 Honeybadger optional:
   - Show a feedback form on your error page:
