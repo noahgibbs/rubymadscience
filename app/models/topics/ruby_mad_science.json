@@ -1,0 +1,83 @@
+{
+    "name": "Ruby Mad Science",
+    "desc": "This site is a Rails app, with a series of articles about how it was written.",
+    "thumbnail_url": "/img/assistant_pirate_with_sphere_thumb.png",
+    "bigthumb_url":  "/img/assistant_pirate_with_sphere_bigthumb.png",
+    "fullsize_url":  "/img/assistant_pirate_with_sphere_fullsize.png",
+    "data": {
+    },
+    "steps": [
+        {
+            "name": "Let's Build Coding Course Software in Rails (The Beginning)",
+            "url": "https://codefol.io/posts/series-build-coding-course-software-in-rails/",
+            "id": "series-build-coding-course-software-in-rails",
+            "type": "blog",
+            "desc": "The very beginning. A list of topics in plain black and white, no photos... The very start.",
+            "data": {
+            }
+        },
+        {
+            "name": "RMS: Pretty It Up",
+            "url": "https://codefol.io/posts/series-build-coding-course-pretty-it-up/",
+            "id": "series-build-coding-course-pretty-it-up",
+            "type": "blog",
+            "desc": "Early and rough, but it's still important to make it look like something. Here I use Bootstrap to quickly style the site.",
+            "data": {
+            }
+        },
+        {
+            "name": "RMS: Interesting Topics",
+            "url": "https://codefol.io/posts/series-build-coding-course-interesting-topics/",
+            "id": "series-build-coding-course-interesting-topics",
+            "type": "blog",
+            "desc": "Here we make Topics look like something on the front page, and allow drilling down into them.",
+            "data": {
+            }
+        },
+        {
+            "name": "RMS: Tracking Progress",
+            "url": "https://codefol.io/posts/series-build-coding-course-tracking-progress/",
+            "id": "series-build-coding-course-tracking-progress",
+            "type": "blog",
+            "desc": "Here's the beginning of tracking whether a step has been completed.",
+            "data": {
+            }
+        },
+        {
+            "name": "RMS: Real Teaching and File-Based Models",
+            "url": "https://codefol.io/posts/series-build-coding-course-real-teaching/",
+            "id": "series-build-coding-course-real-teaching",
+            "type": "blog",
+            "desc": "Topics and steps exist, but next they need something: actual topics that somebody might care about. This turns out to be a really interesting application for file-based models, as opposed to DB models.",
+            "data": {
+            }
+        },
+        {
+            "name": "RMS: Deployment",
+            "url": "https://codefol.io/posts/series-build-coding-course-deployment/",
+            "id": "series-build-coding-course-deployment",
+            "type": "blog",
+            "desc": "This site is deployed with Ansible, both for provisioning and for deploying the app. Want to look at how I set that up and what it looks like?",
+            "data": {
+            }
+        },
+        {
+            "name": "RMS: Subscriptions and Profiles",
+            "url": "https://codefol.io/posts/series-build-coding-course-subscriptions-and-profiles/",
+            "id": "series-build-coding-course-subscriptions-and-profiles",
+            "type": "blog",
+            "desc": "A user should be able to subscribe to topics, and see their subscriptions. Here, I build the UI for that.",
+            "data": {
+            }
+        },
+        {
+            "name": "RMS: Email Reminders",
+            "url": "https://codefol.io/posts/series-build-coding-course-email-reminders/",
+            "id": "series-build-coding-course-email-reminders",
+            "type": "blog",
+            "desc": "And finally, it's important to actually send email to remind a user that they asked to hear about their topics. How is email hooked up? And the background task to send it?",
+            "data": {
+            }
+        }
+    ]
+}
