@@ -2,6 +2,7 @@ class Topic
     TOPIC_KEYS = [:name, :desc, :thumbnail_url, :bigthumb_url, :fullsize_url, :id, :data, :steps, :created_at, :updated_at]
     STEP_KEYS = [:name, :desc, :url, :id, :type, :data]
     STEP_TYPES = [:video, :blog, :blog_and_video]
+    STEP_ID_REGEXP = /\A[-a-zA-Z0-9]+\Z/
     DEFAULT_TOPIC_ROOT = File.join(Rails.root, "app", "models", "topics")
 
     # This is how we do the view mapping of type to output markup
@@ -61,12 +62,18 @@ class Topic
 
     def self.load_topic_from_json(json_string_data, created:, updated:, id:)
         raw_objs = JSON.load(json_string_data)
+
+        raw_objs["steps"].pop if raw_objs["steps"][-1].empty?
+
         illegal_keys = raw_objs.keys - TOPIC_KEYS.map(&:to_s)
         raise("Illegal keys in topic: #{illegal_keys.inspect}!") unless illegal_keys.empty?
 
         step_ids = raw_objs["steps"].map { |so| so["id"] }
         dup_ids = step_ids.select{ |e| step_ids.count(e) > 1 }.uniq
-        raise("Duplicate step IDs in topic: #{dup_ids.inspect}!") unless dup_ids.empty?
+        raise("Duplicate step IDs in topic #{id.inspect}: #{dup_ids.inspect}!") unless dup_ids.empty?
+
+        illegal_ids = step_ids.select { |sid| sid !~ STEP_ID_REGEXP }
+        raise("Illegal step IDs in topic #{id.inspect}: #{illegal_ids.inspect}!") unless illegal_ids.empty?
 
         steps = raw_objs["steps"].map do |step_objs|
             unless STEP_TYPES.map(&:to_s).include?(step_objs["type"])
