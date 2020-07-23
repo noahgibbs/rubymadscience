@@ -1,0 +1,60 @@
+{
+    "name": "Ruby Memory",
+    "desc": "The CRuby interpreter manages its memory in a complex and interesting way. Knowing about it can help you optimise your Ruby programs and also just generally understand what's going on.",
+    "thumbnail_url": "/img/chimp_and_blocks_thumb.png",
+    "bigthumb_url":  "/img/chimp_and_blocks_bigthumb.png",
+    "fullsize_url":  "/img/chimp_and_blocks_fullsize.png",
+    "data": {
+    },
+    "steps": [
+        {
+            "name": "How CRuby Manages Memory: Slots and How to Use Them",
+            "url": "https://engineering.appfolio.com/appfolio-engineering/2018/1/2/how-ruby-uses-memory",
+            "id": "how-ruby-uses-memory",
+            "type": "blog",
+            "desc": "Ruby has to allocate memory for its objects. How does it do that? How are different kinds of objects encoded?",
+            "data": {
+            }
+        },
+        {
+            "name": "How Ruby Encodes References: Tiny Objects",
+            "url": "https://engineering.appfolio.com/appfolio-engineering/2019/6/25/how-ruby-encodes-references-ruby-tiny-objects-explained",
+            "id": "how-ruby-encodes-references-ruby-tiny-objects-explained",
+            "type": "blog",
+            "desc": "Many Ruby objects, such as integers and floating-point numbers are encoded directly into the 64-bit reference that would otherwise point to a value. What can those references contain? How are they encoded?",
+            "data": {
+            }
+        },
+        {
+            "name": "Ruby Memory: Fragmentation and Bloat",
+            "id": "rubyconf-conscious-coding-practice",
+            "type": "video",
+            "desc": "Nate Berkopec explains Ruby memory fragmentation and how it can waste your memory. He also tells you how to detect and avoid it.",
+            "data": {
+                "video": { "youtube": "eBmM-yWPeMw" }
+            }
+        },
+        {
+            "name": "Benchmarking Ruby's Heap: Malloc, TCMalloc and jemalloc",
+            "url": "https://engineering.appfolio.com/appfolio-engineering/2018/2/1/benchmarking-rubys-heap-malloc-tcmalloc-jemalloc",
+            "id": "benchmarking-rubys-heap-malloc-tcmalloc-jemalloc",
+            "type": "blog",
+            "desc": "Ruby uses a normal system allocator for most of its memory. That means GCC's allocator, or you can configure another like TCMalloc or jemalloc. What are the performance implications? Should you do so? (Spoiler: yes)",
+            "data": {
+            }
+        },
+        {
+            "name": "Ruby Memory Environment Variables: They're Simpler Than They Look",
+            "url": "https://engineering.appfolio.com/appfolio-engineering/2018/6/27/ruby-memory-environment-variables-simpler-than-they-look",
+            "id": "ruby-memory-environment-variables-simpler-than-they-look",
+            "type": "blog",
+            "desc": "Ruby allows you to configure a lot of its memory handling with environment variables. Which variables? What do they do?",
+            "data": {
+            }
+        },
+
+
+
+        {}
+    ]
+}

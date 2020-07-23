@@ -1,0 +1,120 @@
+{
+    "name": "Ruby Benchmarking and Performance",
+    "desc": "Want to understand the ins and outs of the Ruby interpreter's performance? Here are a series of articles explaining relevant parts of the interpreter and how you can optimise them. These are very ground-level, with a strong emphasis on the details of current Ruby specifically.",
+    "thumbnail_url": "/img/dr_chimp_train_electronics_thumb.png",
+    "bigthumb_url":  "/img/dr_chimp_train_electronics_bigthumb.png",
+    "fullsize_url":  "/img/dr_chimp_train_electronics_fullsize.png",
+    "data": {
+    },
+    "steps": [
+        {
+            "name": "JIT and Ruby's MJIT",
+            "url": "https://engineering.appfolio.com/appfolio-engineering/2019/7/18/jit-and-rubys-mjit",
+            "id": "jit-and-rubys-mjit",
+            "type": "blog",
+            "desc": "How does JIT work in Ruby? How is it different from other languages? Ruby's JIT uses a very unusual approach to satisfy some unusual requirements from the Ruby Core Team.",
+            "data": {
+            }
+        },
+        {
+            "name": "Can I Use Ten 10% Speedups to Make Ruby Instant?",
+            "url": "https://engineering.appfolio.com/appfolio-engineering/2018/7/24/performance-math-and-where-to-find-it",
+            "id": "performance-math-and-where-to-find-it",
+            "type": "blog",
+            "desc": "The math behind performance, benchmarking and speedups can be a little bit subtle. Here, we'll talk about how to do that math, and verify that other developers have done it correctly.",
+            "data": {
+            }
+        },
+        {
+            "name": "Where Does Rails Spend Its Time?",
+            "url": "https://engineering.appfolio.com/appfolio-engineering/2019/6/4/where-does-rails-spend-its-time",
+            "id": "where-does-rails-spend-its-time",
+            "type": "blog",
+            "desc": "How do you profile a large Ruby or Rails application? This article will tell you, mostly using Discourse and Rails Ruby Bench as an example app and workload for StackProf.",
+            "data": {
+            }
+        },
+        {
+            "name": "Microbenchmarks vs Macrobenchmarks: What's a Microbenchmark?",
+            "url": "https://engineering.appfolio.com/appfolio-engineering/2019/1/7/microbenchmarks-vs-macrobenchmarks-ie-whats-a-microbenchmark",
+            "id": "microbenchmarks-vs-macrobenchmarks-ie-whats-a-microbenchmark",
+            "type": "blog",
+            "desc": "You'll see people talk about different 'sizes' of benchmark. What does that mean? Why does it matter?",
+            "data": {
+            }
+        },
+        {
+            "name": "Measuring Rails Overhead",
+            "url": "https://engineering.appfolio.com/appfolio-engineering/2019/4/27/measuring-rails-overhead",
+            "id": "measuring-rails-overhead",
+            "type": "blog",
+            "desc": "Do you ever wonder how much extra overhead Rails adds? This is both a measurement of that, and an explanation of how you'd measure it.",
+            "data": {
+            }
+        },
+        {
+            "name": "A Story of Passion and Hash Tables",
+            "url": "https://engineering.appfolio.com/appfolio-engineering/2017/6/11/a-story-of-engineering-passion-and-ruby-hash-tables",
+            "id": "a-story-of-engineering-passion-and-ruby-hash-tables",
+            "type": "blog",
+            "desc": "Ruby 2.4 got faster hash tables. Here's the story behind an engineering duel to choose <i>who</i> got to write those hash tables.",
+            "data": {
+            }
+        },
+        {
+            "name": "What's the Minimum Concurrency that will Benefit Rails?",
+            "url": "https://engineering.appfolio.com/appfolio-engineering/2019/4/11/a-simpler-rails-benchmark-puma-and-concurrency",
+            "id": "a-simpler-rails-benchmark-puma-and-concurrency",
+            "type": "blog",
+            "desc": "This post measures Rails performance for a tiny 'hello, world' Rails app with different numbers of threads and processes. By doing so, it shows you how many threads and processes might benefit a <i>minimal</i> Rails app. Most apps, especially <a href='https://engineering.appfolio.com/appfolio-engineering/2017/3/22/rails-benchmarking-puma-and-multiprocess'>large Rails apps</a> will want more, but this gives a working minimum.",
+            "data": {
+            }
+        },
+        {
+            "name": "Ruby Speed 2.0 Through 2.6",
+            "url": "https://engineering.appfolio.com/appfolio-engineering/2019/3/7/ruby-speed-roundup-20-through-26",
+            "id": "ruby-speed-roundup-20-through-26",
+            "type": "blog",
+            "desc": "See how Rails speed has changed between 2.0 and 2.6. This also helps you see what kind of performance improvements might be reasonable or unreasonable to expect in the future.",
+            "data": {
+            }
+        },
+        {
+            "name": "Ruby's Global Method Cache",
+            "url": "https://engineering.appfolio.com/appfolio-engineering/2018/7/18/rubys-global-method-cache",
+            "id": "rubys-global-method-cache",
+            "type": "blog",
+            "desc": "Ruby needs to figure out what method to call at each call site. Here's an explanation of how it does that.",
+            "data": {
+            }
+        },
+        {
+            "name": "Ruby Method Lookup and Global State",
+            "url": "https://engineering.appfolio.com/appfolio-engineering/2018/10/2/ruby-method-lookup-rubyvmstat-and-global-state",
+            "id": "ruby-method-lookup-rubyvmstat-and-global-state",
+            "type": "blog",
+            "desc": "Ruby method lookup can be hard. There's some subtlety to it, some ways to debug it and some performance implications. Want to know what they are?",
+            "data": {
+            }
+        },
+        {
+            "name": "How MJIT Generates C from Ruby: A Deep Dive",
+            "url": "https://engineering.appfolio.com/appfolio-engineering/2019/7/19/how-mjit-generates-c-from-ruby-a-deep-dive",
+            "id": "how-mjit-generates-c-from-ruby-a-deep-dive",
+            "type": "blog",
+            "desc": "Now that you understand Ruby's approach to JIT, let's dive in deep and see what that code actually looks like.",
+            "data": {
+            }
+        },
+        {
+            "name": "Benchmark Results: Threads, Processes and Fibers",
+            "url": "https://engineering.appfolio.com/appfolio-engineering/2019/9/4/benchmark-results-threads-processes-and-fibers",
+            "id": "benchmark-results-threads-processes-and-fibers",
+            "type": "blog",
+            "desc": "Ruby has many concurrency primitives, including threads, processes and fibers. Which are faster in various circumstances? How many of each should you use? It's a complicated topic, but some benchmarks may help you learn some details. You can also find a link to the previous article explaining the details of how the benchmark is written if you like.",
+            "data": {
+            }
+        },
+        {}
+    ]
+}
