@@ -5,6 +5,12 @@
 * Set up email at a custom domain, where it should be
 * EU cookies
 
+* Sidekiq job to check that step URL links aren't broken periodically
+
+* Simple admin page
+
+* Cache-fixing by setting a 'logged in as' cookie and making the index and show actions for topics have a static underlying page
+
 Honeybadger optional:
   - Show a feedback form on your error page:
     https://docs.honeybadger.io/gem-feedback
