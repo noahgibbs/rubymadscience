@@ -14,12 +14,22 @@
             <p>
                 <%= link_to "Didn't receive your (re)confirmation email?", new_user_confirmation_path %>
             </p>
+
+            <p class="profile_address_unconfirmed_reminder">
+                <b>NOTE</b>: Unconfirmed email addresses <b>WILL NOT</b> receive email reminders!
+            </p>
         <% end %>
 
         <h2 class="profile-email-reminders">My Email Reminders</h2>
 
         <% if @topic_items.size == 0 %>
-            <h3>You Aren't Subscribed to Any Topics.</h3>
+            <h3 class="profile_you_arent_subscribed">You Aren't Subscribed to Any Topics.</h3>
+        <% end %>
+
+        <% unless current_user.confirmed_at %>
+            <p class="profile_reminder_unconfirmed_warning">
+                Your email address <b>is not confirmed</b> and <b>WILL NOT</b> receive email reminders until you confirm it!
+            </p>
         <% end %>
 
         <div class="profile-reminder-disclaimers text-muted">
@@ -33,8 +43,7 @@
             </p>
 
             <p>
-                Please allow up to a few hours for a subscription or unsubscription to be processed. Batch
-                jobs and email providers can have delays.
+                Please allow up to a few hours for a subscription or unsubscription to be processed. Batch jobs and email providers can have delays.
             </p>
         </div>
 

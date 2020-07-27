@@ -3,6 +3,7 @@ class ReminderEmails
 
     def perform
         User.all.each do |u|
+            next unless u.confirmed_at
             remind_steps = u.next_steps_to_remind_at_time(Time.now)
             next if remind_steps.empty?
             UserTopicItem.transaction do
