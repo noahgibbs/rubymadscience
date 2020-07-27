@@ -1,0 +1,9 @@
+<div class="container">
+
+<h1>Admin Dashboard</h1>
+
+<p>Current user count: <%= @user_count %></p>
+
+<p>Last email went out: <%= @last_update == nil ? "Never" : time_ago_in_words(@last_update) %></p>
+
+</div>

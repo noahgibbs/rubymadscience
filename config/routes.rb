@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'admin/dashboard'
   get '/about' => 'pages#about'
   get '/feedback' => 'pages#feedback'
   get '/profile' => 'pages#profile'

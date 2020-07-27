@@ -11,6 +11,14 @@ class User < ApplicationRecord
 
   include ReminderCalculator
 
+  def is_admin?
+    return false unless self.confirmed_at
+    return true if self.email == "the.codefolio.guy+rms@gmail.com"
+    return true if Rails.env.test? && self.email == "the.codefolio.guy+rubymadscience@rubymadscience.com"
+
+    false
+  end
+
   # Get the list of topic IDs that this user will want to be
   # reminded about as of send-time t
   def next_steps_to_remind_at_time(t)
