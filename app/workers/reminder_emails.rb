@@ -2,8 +2,7 @@ class ReminderEmails
     include Sidekiq::Worker
 
     def perform
-        User.all.each do |u|
-            next unless u.confirmed_at
+        User.where.not(:confirmed_at => nil).each do |u|
             remind_steps = u.next_steps_to_remind_at_time(Time.now)
             next if remind_steps.empty?
             UserTopicItem.transaction do

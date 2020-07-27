@@ -4,8 +4,18 @@ admin:
   confirmed_at: 2020-07-01
   encrypted_password: "$2a$11$60UOi.WFQnUkbHXjPJCER./OH5VKD1EkAZNFcWgN4FWrBVuqUUgFq"
 
+confirmed_with_no_reminders:
+  email: the.codefolio.guy+confnoreminders@rubymadscience.com
+  confirmed_at: 2020-07-01
+  encrypted_password: "$2a$11$60UOi.WFQnUkbHXjPJCER./OH5VKD1EkAZNFcWgN4FWrBVuqUUgFq"
+
 unconfirmed:
   email: the.codefolio.guy+unconfirmed@rubymadscience.com
+  encrypted_password: "$2a$11$60UOi.WFQnUkbHXjPJCER./OH5VKD1EkAZNFcWgN4FWrBVuqUUgFq"
+  confirmation_sent_at: <%= Date.today %>
+
+unconfirmed_with_reminders:
+  email: the.codefolio.guy+unconfirmedwithreminders@rubymadscience.com
   encrypted_password: "$2a$11$60UOi.WFQnUkbHXjPJCER./OH5VKD1EkAZNFcWgN4FWrBVuqUUgFq"
   confirmation_sent_at: <%= Date.today %>
 

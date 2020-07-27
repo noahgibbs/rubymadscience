@@ -5,3 +5,14 @@ ut1:
   subscription: daily
   last_reminder: 2020-07-01 14:40
 
+ut2:
+  user: unconfirmed_with_reminders
+  topic_id: coding_studies
+  subscription: daily
+  last_reminder: 2020-07-01 14:40
+
+ut3:
+  user: unconfirmed_with_reminders
+  topic_id: software_practice
+  subscription: weekly
+  last_reminder: 2020-07-01 14:40
