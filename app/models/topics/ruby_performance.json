@@ -39,7 +39,7 @@
             "name": "Six Years of Ruby Performance History",
             "id": "rubykaigi-six-years-of-ruby-perf-history",
             "type": "video",
-            "desc": "A deep but simple exploration of Ruby multiprocess and multithread performance in a trivial Rails app.",
+            "desc": "A deep exploration of Ruby multiprocess and multithread performance in a trivial Rails app.",
             "data": {
                 "video": { "youtube": "iy4N7AtzZYc" }
             }
@@ -51,6 +51,15 @@
             "type": "blog",
             "desc": "How do you profile a large Ruby or Rails application? This article will tell you, mostly using Discourse and Rails Ruby Bench as an example app and workload for StackProf.",
             "data": {
+            }
+        },
+        {
+            "name": "Determining Ruby Process Counts: Theory and Practice",
+            "id": "rubykaigi-ruby-process-counts",
+            "type": "video",
+            "desc": "How do you determine the right number of processes and threads for your performance-critical Ruby application?",
+            "data": {
+                "video": { "youtube": "BE5C2ydN0y0" }
             }
         },
         {
@@ -89,6 +98,16 @@
             "data": {
             }
         },
+        {
+            "name": "Optimisation Techniques of the Benchmark Winners",
+            "id": "rubykaigi-optimisation-benchmark-winners",
+            "type": "video",
+            "desc": "In this RubyKaigi keynote, Jeremy Evans shows off the benchmark-winning optimisation techniques he uses in Sequel and Roda, a pair of incredibly fast Ruby libraries.",
+            "data": {
+                "video": { "youtube": "RuGZCcEL2F8" }
+            }
+        },
+
         {
             "name": "What's the Minimum Concurrency that will Benefit Rails?",
             "url": "https://engineering.appfolio.com/appfolio-engineering/2019/4/11/a-simpler-rails-benchmark-puma-and-concurrency",

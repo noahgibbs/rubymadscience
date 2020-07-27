@@ -54,6 +54,15 @@
             }
         },
         {
+            "name": "Halve Your Memory Usage with these 12 Weird Tricks",
+            "id": "rubyconf-berkopec-halve-memory-usage",
+            "type": "video",
+            "desc": "Here, Nate Berkopec gives a lot of interesting tricks to reduce your memory usage in Ruby. Each shows you something about how Ruby's memory system operates.",
+            "data": {
+                "video": { "youtube": "kZcqyuPeDao" }
+            }
+        },
+        {
             "name": "Ruby Memory Environment Variables: They're Simpler Than They Look",
             "url": "https://engineering.appfolio.com/appfolio-engineering/2018/6/27/ruby-memory-environment-variables-simpler-than-they-look",
             "id": "ruby-memory-environment-variables-simpler-than-they-look",
