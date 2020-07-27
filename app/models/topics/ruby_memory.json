@@ -5,14 +5,24 @@
     "bigthumb_url":  "/img/chimp_and_blocks_bigthumb.png",
     "fullsize_url":  "/img/chimp_and_blocks_fullsize.png",
     "data": {
+        "related": ["ruby_performance"]
     },
     "steps": [
+        {
+            "name": "Faster Apps, No Memory Thrash",
+            "id": "rubykaigi-faster-apps-no-memory-thrash",
+            "type": "video",
+            "desc": "Learn how Ruby encodes objects in memory and how to optimise for it.",
+            "data": {
+                "video": { "youtube": "Z4nBjXL-ymI" }
+            }
+        },
         {
             "name": "How CRuby Manages Memory: Slots and How to Use Them",
             "url": "https://engineering.appfolio.com/appfolio-engineering/2018/1/2/how-ruby-uses-memory",
             "id": "how-ruby-uses-memory",
             "type": "blog",
-            "desc": "Ruby has to allocate memory for its objects. How does it do that? How are different kinds of objects encoded?",
+            "desc": "After watching the video, here's a deeper (text) explanation of tiny, small and large Ruby objects in memory.",
             "data": {
             }
         },
@@ -21,7 +31,7 @@
             "url": "https://engineering.appfolio.com/appfolio-engineering/2019/6/25/how-ruby-encodes-references-ruby-tiny-objects-explained",
             "id": "how-ruby-encodes-references-ruby-tiny-objects-explained",
             "type": "blog",
-            "desc": "Many Ruby objects, such as integers and floating-point numbers are encoded directly into the 64-bit reference that would otherwise point to a value. What can those references contain? How are they encoded?",
+            "desc": "Ruby 'tiny' objects, such as integers and floating-point numbers are encoded directly into the 64-bit reference that would otherwise point to a value. What can those references contain? How are they encoded?",
             "data": {
             }
         },

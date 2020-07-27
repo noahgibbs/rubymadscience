@@ -5,8 +5,18 @@
     "bigthumb_url":  "/img/dr_chimp_train_electronics_bigthumb.png",
     "fullsize_url":  "/img/dr_chimp_train_electronics_fullsize.png",
     "data": {
+        "related": ["ruby_memory"]
     },
     "steps": [
+        {
+            "name": "Profiling and Benchmarking 101",
+            "id": "railsconf-berkopec-profiling-benchmarking-101",
+            "type": "video",
+            "desc": "Are you new to benchmarking for performance? Ruby performance expert Nate Berkopec gave a great talk on this at RailsConf.",
+            "data": {
+                "video": { "youtube": "XL51vf-XBTs" }
+            }
+        },
         {
             "name": "JIT and Ruby's MJIT",
             "url": "https://engineering.appfolio.com/appfolio-engineering/2019/7/18/jit-and-rubys-mjit",
@@ -26,6 +36,15 @@
             }
         },
         {
+            "name": "Six Years of Ruby Performance History",
+            "id": "rubykaigi-six-years-of-ruby-perf-history",
+            "type": "video",
+            "desc": "A deep but simple exploration of Ruby multiprocess and multithread performance in a trivial Rails app.",
+            "data": {
+                "video": { "youtube": "iy4N7AtzZYc" }
+            }
+        },
+        {
             "name": "Where Does Rails Spend Its Time?",
             "url": "https://engineering.appfolio.com/appfolio-engineering/2019/6/4/where-does-rails-spend-its-time",
             "id": "where-does-rails-spend-its-time",
@@ -41,6 +60,15 @@
             "type": "blog",
             "desc": "You'll see people talk about different 'sizes' of benchmark. What does that mean? Why does it matter?",
             "data": {
+            }
+        },
+        {
+            "name": "How Close is Ruby 3x3 for Production Web Apps?",
+            "id": "rubykaigi-how-close-is-ruby-33",
+            "type": "video",
+            "desc": "What does a macrobenchmark measure? After reading the explanation above, this video will show you the kind of thing a macrobenchmark can measure about real-world Rails performance on a reasonably typical workload.",
+            "data": {
+                "video": { "youtube": "xZ5mw3x2pdo" }
             }
         },
         {
