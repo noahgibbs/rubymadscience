@@ -1,0 +1,43 @@
+# Further possible improvements, organised by what effect they might have
+
+## Login
+
+* Twitter or GitHub login would be a really good idea
+
+## Public Users
+
+It would be nice for users to show off their RMS progress.
+
+* Users should be able to opt into their RMS info being 'public' - shown to others
+* It should be possible to add a note/comment when completing a step, which would be visible for public users
+
+## Publicising
+
+I'd like RMS to help publicise itself.
+
+* It'd be nice for the app to post a topic to an RMS-specific Twitter over time, one step at a time
+
+### Anonifying
+
+It'd be nice if a user could choose to be anonymised, so their info was public but their name didn't have to be.
+
+* Some kind of Markov-generator technique for anonymous names
+* Anon'd names don't really need to be unique, just high-cardinality
+* A given user can be public or anon'd
+* Some kinds of data don't want to be public, so there should be a "force anon for all displayed users" mode for some views, and probably as a site mode to force for all views
+
+## Personalising
+
+It would be great if users could get access to specific stuff *for them*, not just the same topics as everybody else.
+
+* Pull down Gumroad data on purchasers to expose/emphasise "hey, you own this thing"
+* Pull down Gumroad data on purchasers to send Slack invite to (only) new purchasers
+
+## Onboarding
+
+* Use shepherdjs to explain about topics-as-subscriptions (not 100% the same as classes) and generally show the user around.
+
+## Admin / Audit Trail
+
+* Need (effectively) an audit trail - what changes have been made to topics in done-ness? what's current state of a Topic/user combo
+* Would like to have site activity - what has happened recently for all users, ordered by time?
