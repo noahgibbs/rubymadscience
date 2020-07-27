@@ -26,8 +26,6 @@ module ReminderCalculator
                 topic[:last_reminder].advance(weeks: 1, hours: -2)
             elsif topic[:frequency] == "monthly"
                 topic[:last_reminder].advance(months: 1, hours: -2)
-            elsif topic[:frequency] == "constantly"
-                topic[:last_reminder]
             else
                 raise "Unknown frequency #{topic[:frequency].inspect} for topic #{topic_name.inspect}!"
             end
