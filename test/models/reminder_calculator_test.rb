@@ -9,42 +9,31 @@ class ReminderCalculatorTest < ActiveSupport::TestCase
     setup do
         @calc = SimpleReminder.new
         Topic.topic_root = File.join(Rails.root, "test", "topic_data")
-    end
-
-    test "reminder frequencies for topics" do
-        topics = {
-            "topic1" => {
-                frequency: "weekly",
-                last_reminder: Time.parse("2020-07-20 13:00"),
-            },
-            "topic2" => {
+        @topic_subs = {
+            "topic_daily" => {
                 frequency: "daily",
-                last_reminder: Time.parse("2020-07-20 13:00"),
             },
-            "topic3" => {
-                frequency: "monthly",
-                last_reminder: Time.parse("2020-07-20 13:00"),
-            },
-            "topic4" => {
-                frequency: "daily",
-                last_reminder: Time.parse("2020-07-21 13:00"),
-            },
-            "topic5" => {
+            "topic_weekly" => {
                 frequency: "weekly",
-                last_reminder: Time.parse("2020-07-13 13:00"),
             },
-            "topic6" => {
+            "topic_monthly" => {
                 frequency: "monthly",
-                last_reminder: Time.parse("2020-06-13 13:00"),
+            },
+            "topic_none" => {
+                frequency: "none",
             },
         }
-        checked_time = Time.parse("2020-07-21 16:32")
-
-        ttr = @calc.topics_to_remind(topics, checked_time)
-        assert_equal ["topic2", "topic5", "topic6"], ttr
     end
 
-    test "next steps for topics" do
+    test "send only dailies after one day" do
+        reminder_origin = Time.parse("2020-07-01 16:32")
+        reminder_day = Time.parse("2020-07-02 17:37")
+
+        ttr = @calc.topics_to_remind_on_day(@topic_subs, reminder_origin, reminder_day)
+        assert_equal ["topic_daily"], ttr
+    end
+
+    test "find next steps for topics" do
         topic_ids = ["coding_studies", "rails_internals", "software_practice"]
         step_completions = [
             UserStepItem.all.build(topic_id: "coding_studies", step_id: "coding_studies/rubyconf-conscious-coding-practice"),

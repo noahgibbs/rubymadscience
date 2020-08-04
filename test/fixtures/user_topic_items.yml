@@ -1,18 +1,20 @@
 
-ut1:
+ut_reminder_tester:
   user: reminder_tester
   topic_id: coding_studies
   subscription: daily
-  last_reminder: 2020-07-01 14:40
 
-ut2:
+ut_unconfirmed_with_reminders_1:
   user: unconfirmed_with_reminders
   topic_id: coding_studies
   subscription: daily
-  last_reminder: 2020-07-01 14:40
 
-ut3:
+ut_unconfirmed_with_reminders_2:
   user: unconfirmed_with_reminders
   topic_id: software_practice
   subscription: weekly
-  last_reminder: 2020-07-01 14:40
+
+ut_freshly_reminded_tester_1:
+  user: freshly_reminded_tester_1
+  topic_id: coding_studies
+  subscription: daily

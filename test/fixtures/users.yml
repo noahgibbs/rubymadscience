@@ -23,3 +23,8 @@ reminder_tester:
   email: the.codefolio.guy+reminders@rubymadscience.com
   confirmed_at: 2020-07-01
   encrypted_password: "$2a$11$60UOi.WFQnUkbHXjPJCER./OH5VKD1EkAZNFcWgN4FWrBVuqUUgFq"
+
+freshly_reminded_tester_1:
+  email: the.codefolio.guy+freshreminders1@rubymadscience.com
+  confirmed_at: 2020-07-01
+  encrypted_password: "$2a$11$60UOi.WFQnUkbHXjPJCER./OH5VKD1EkAZNFcWgN4FWrBVuqUUgFq"

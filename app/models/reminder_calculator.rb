@@ -3,35 +3,35 @@ require "time"
 # No reason that the User email reminder logic can't live
 # a simple, separate PORO.
 
-# For now, this assumes all sends happen at roughly the same time of
-# day, so we can mostly count in whole days. Convenient!
-#
-# Can that condition fail? Absolutely. Bounced mail and server downtime
-# are just the first two reasons that come to mind.
+# We assume sends happen daily at a given time for each user.
+
 module ReminderCalculator
-    # Pass in a hash 'topics' of the form:
+    # Topics_hash is of the form:
     #    "topic_name" => {
     #        frequency: "weekly",      # Or "daily", "monthly" or "none"
-    #        last_reminder: Time.now,  # Whenever last reminder was for this topic
     #    }
-    def topics_to_remind(topics_hash, send_time)
+    # and also a reminder_time and a last_reminder time. The reminder_time
+    # is the 'origin' of the reminders, such as the user's creation or
+    # first subscription -- weekly reminders will happen N weeks after this
+    # origin, etc.
+    def topics_to_remind_on_day(topics_hash, reminder_origin, reminder_day)
         topics = topics_hash.dup
         topics.delete_if { |k, v| v[:frequency] == "none" }
 
+        days_from_origin = (reminder_day.to_date - reminder_origin.to_date).to_i
+
         topics_to_remind = topics.keys.select do |topic_name|
             topic = topics[topic_name]
-            approx_next_reminder = if topic[:frequency] == "daily"
-                topic[:last_reminder].advance(days: 1, hours: -2)
-            elsif topic[:frequency] == "weekly"
-                topic[:last_reminder].advance(weeks: 1, hours: -2)
-            elsif topic[:frequency] == "monthly"
-                topic[:last_reminder].advance(months: 1, hours: -2)
-            else
-                raise "Unknown frequency #{topic[:frequency].inspect} for topic #{topic_name.inspect}!"
-            end
-
-            # Return true for this topic name if it's time to send again
-            approx_next_reminder <= send_time
+            do_include =
+                if topic[:frequency] == "daily"
+                    true
+                elsif topic[:frequency] == "weekly"
+                    days_from_origin % 7 == 0
+                elsif topic[:frequency] == "monthly"
+                    days_from_origin % 30 == 0  # This isn't exactly monthly... :-/
+                else
+                    raise "Unknown frequency #{topic[:frequency].inspect} for topic #{topic_name.inspect}!"
+                end
         end
     end
 

@@ -20,5 +20,8 @@ class ReminderEmailsTest < ActiveSupport::TestCase
 
         # Confirmed user with reminders? Email.
         assert_equal 1, emails_with_receiver(users(:reminder_tester).email).size
+
+        # User with reminders, but they've been emailed within a day? No email.
+        assert_empty emails_with_receiver(users(:freshly_reminded_tester_1).email)
     end
 end

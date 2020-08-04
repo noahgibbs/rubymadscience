@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+reminder_tester_urd:
+  user: reminder_tester
+  reminder_time: 2020-07-18 10:24
+  last_reminder: 2020-07-19 9:00
+
+freshly_reminded_tester_urd:
+  user: freshly_reminded_tester_1
+  reminder_time: 2020-07-18 10:24
+  last_reminder: <%= (Time.current - 1.hour).to_s %>

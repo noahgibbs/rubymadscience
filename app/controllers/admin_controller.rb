@@ -5,7 +5,7 @@ class AdminController < ApplicationController
   def dashboard
     @user_count = User.count
 
-    @last_email = UserTopicItem.maximum(:last_reminder)
+    @last_email = UserReminder.maximum(:last_reminder)
 
     @num_subscriptions = UserTopicItem.where(subscription: ["daily", "weekly", "monthly"]).count
     @completed_steps = UserStepItem.where(doneness: 2).count

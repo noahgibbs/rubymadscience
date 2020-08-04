@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_05_103436) do
+ActiveRecord::Schema.define(version: 2020_08_04_125612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(version: 2020_07_05_103436) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "user_reminders", force: :cascade do |t|
+    t.datetime "reminder_time"
+    t.datetime "last_reminder"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "user_step_items", force: :cascade do |t|
     t.integer "doneness"
     t.string "note"
@@ -47,7 +55,6 @@ ActiveRecord::Schema.define(version: 2020_07_05_103436) do
     t.string "subscription"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.datetime "last_reminder"
     t.index ["user_id", "topic_id"], name: "index_user_topic_items_on_user_id_and_topic_id", unique: true
   end
 
