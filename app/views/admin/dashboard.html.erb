@@ -12,4 +12,26 @@
 
 <p>Last email went out: <%= @last_email == nil ? "Never" : time_ago_in_words(@last_email) %></p>
 
+<h2>Events</h2>
+
+<table class="table">
+    <thead>
+        <th>Time</th>
+        <th>Type</th>
+        <th>User Email</th>
+        <th>Data</th>
+    </thead>
+    <tbody>
+        <% @events.each do |e| %>
+            <tr>
+                <td><%= time_ago_in_words(e.created_at) %> ago / <%= e.created_at %></td>
+                <td><%= e.type ? e.type : "NULL" %></td>
+                <td><%= e.user.email ? e.user.email : "NULL" %></td>
+                <td><%= e.data %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+
 </div>

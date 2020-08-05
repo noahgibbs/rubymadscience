@@ -10,6 +10,8 @@ class AdminController < ApplicationController
     @num_subscriptions = UserTopicItem.where(subscription: ["daily", "weekly", "monthly"]).count
     @completed_steps = UserStepItem.where(doneness: 2).count
     @skipped_steps = UserStepItem.where(doneness: 1).count
+
+    @events = Event.order(updated_at: :desc)
   end
 
   def users
