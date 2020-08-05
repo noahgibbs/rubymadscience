@@ -18,4 +18,5 @@ Rails.application.routes.draw do
 
   get 'admin/dashboard'
   get 'admin/users'
+  get 'admin/subs'
 end

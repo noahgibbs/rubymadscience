@@ -16,6 +16,10 @@ class AdminController < ApplicationController
     @users = User.all
   end
 
+  def subs
+    @subs = UserTopicItem.order(:subscription)
+  end
+
   protected
 
   def admin_only

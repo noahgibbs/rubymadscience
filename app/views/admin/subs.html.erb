@@ -1,0 +1,22 @@
+<div class="container">
+
+<h1>Subscriptions</h1>
+
+<table class="table">
+    <thead>
+        <th>User Email</th>
+        <th>Topic</th>
+        <th>Subscription</th>
+    </thead>
+    <tbody>
+        <% @subs.each do |sub| %>
+            <tr>
+                <td><%= sub.user.email ? sub.user.email : "NULL" %></td>
+                <td><%= sub.topic_id ? sub.topic_id : "NULL" %></td>
+                <td><%= sub.subscription ? sub.subscription : "NULL" %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+</div>
