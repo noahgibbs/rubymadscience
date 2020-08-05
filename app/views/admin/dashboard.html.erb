@@ -2,7 +2,7 @@
 
 <h1>Admin Dashboard</h1>
 
-<p>Current user count: <%= @user_count %></p>
+<p>Current user count: <%= @user_count %> <%= link_to("(Drill Down)", action: :users) %></p>
 
 <p>Subscriptions: <%= @num_subscriptions %></p>
 

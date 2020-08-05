@@ -12,6 +12,10 @@ class AdminController < ApplicationController
     @skipped_steps = UserStepItem.where(doneness: 1).count
   end
 
+  def users
+    @users = User.all
+  end
+
   protected
 
   def admin_only

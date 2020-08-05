@@ -1,0 +1,22 @@
+<div class="container">
+
+<h1>Users</h1>
+
+<table class="table">
+    <thead>
+        <th>Email</th>
+        <th>Created At</th>
+        <th>Confirmed?</th>
+    </thead>
+    <tbody>
+        <% @users.each do |u| %>
+            <tr>
+                <td><%= u.email ? u.email : "NULL" %></td>
+                <td><%= time_ago_in_words(u.created_at) %> ago / <%= u.created_at %></td>
+                <td><%= u.confirmed_at ? "YES" : "NO" %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+</div>

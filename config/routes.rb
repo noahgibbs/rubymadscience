@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'admin/dashboard'
   get '/about' => 'pages#about'
   get '/feedback' => 'pages#feedback'
   get '/profile' => 'pages#profile'
@@ -16,4 +15,7 @@ Rails.application.routes.draw do
   devise_for :users, path: :auth, controllers: {
     confirmations: 'users/confirmations',
   }
+
+  get 'admin/dashboard'
+  get 'admin/users'
 end
