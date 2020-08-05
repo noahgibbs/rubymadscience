@@ -19,6 +19,7 @@ module ReminderCalculator
         topics.delete_if { |k, v| v[:frequency] == "none" }
 
         days_from_origin = (reminder_day.to_date - reminder_origin.to_date).to_i
+        return [] if days_from_origin == 0
 
         topics_to_remind = topics.keys.select do |topic_name|
             topic = topics[topic_name]

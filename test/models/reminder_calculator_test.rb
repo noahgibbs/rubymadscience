@@ -25,6 +25,14 @@ class ReminderCalculatorTest < ActiveSupport::TestCase
         }
     end
 
+    test "send nothing same-day" do
+        reminder_origin = Time.parse("2020-07-01 2:32")
+        reminder_day = Time.parse("2020-07-01 17:37")
+
+        ttr = @calc.topics_to_remind_on_day(@topic_subs, reminder_origin, reminder_day)
+        assert_empty ttr
+    end
+
     test "send only dailies after one day" do
         reminder_origin = Time.parse("2020-07-01 16:32")
         reminder_day = Time.parse("2020-07-02 17:37")
