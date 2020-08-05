@@ -33,6 +33,14 @@ class ReminderCalculatorTest < ActiveSupport::TestCase
         assert_equal ["topic_daily"], ttr
     end
 
+    test "send dailies and weeklies after one week" do
+        reminder_origin = Time.parse("2020-07-01 16:32")
+        reminder_day = Time.parse("2020-07-08 17:37")
+
+        ttr = @calc.topics_to_remind_on_day(@topic_subs, reminder_origin, reminder_day)
+        assert_equal ["topic_daily", "topic_weekly"], ttr
+    end
+
     test "find next steps for topics" do
         topic_ids = ["coding_studies", "rails_internals", "software_practice"]
         step_completions = [
