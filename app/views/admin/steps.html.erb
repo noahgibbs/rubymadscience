@@ -1,0 +1,24 @@
+<div class="container">
+
+<h1>Steps</h1>
+
+<table class="table">
+    <thead>
+        <th>User Email</th>
+        <th>Topic</th>
+        <th>Step</th>
+        <th>Doneness</th>
+    </thead>
+    <tbody>
+        <% @steps.each do |step| %>
+            <tr>
+                <td><%= (step.user.email && step.user.email) ? step.user.email : "NULL" %></td>
+                <td><%= step.topic_id || "NULL" %></td>
+                <td><%= step.step_id || "NULL" %></td>
+                <td><%= step.doneness %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+</div>

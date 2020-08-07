@@ -6,9 +6,9 @@
 
 <p>Subscriptions: <%= @num_subscriptions %> <%= link_to("(Drill Down)", action: :subs) %></p>
 
-<p>Completed Steps: <%= @completed_steps %></p>
+<p>Completed Steps: <%= @completed_steps %> <%= link_to("(Drill Down)", action: :steps) %></p>
 
-<p>Skipped Steps: <%= @skipped_steps %></p>
+<p>Skipped Steps: <%= @skipped_steps %> <%= link_to("(Drill Down)", action: :steps) %></p>
 
 <p>Last email went out: <%= @last_email == nil ? "Never" : time_ago_in_words(@last_email) %></p>
 

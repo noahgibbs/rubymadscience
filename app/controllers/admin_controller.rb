@@ -22,6 +22,10 @@ class AdminController < ApplicationController
     @subs = UserTopicItem.order(:subscription)
   end
 
+  def steps
+    @steps = UserStepItem.order(:user_id)
+  end
+
   protected
 
   def admin_only
