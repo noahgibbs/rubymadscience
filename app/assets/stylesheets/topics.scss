@@ -137,3 +137,16 @@ h2.profile-email-reminders {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+// Thanks to @NelliesNoodles for the fix!
+@media all and (max-width: 799px) and (min-width: 220px) {
+  .topic-thumbnail {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .topic-index-text {
+    margin-left: 0;
+  }
+}
+
