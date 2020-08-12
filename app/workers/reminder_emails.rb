@@ -7,6 +7,7 @@ class ReminderEmails
 
         reminderless_users = User.joins("LEFT OUTER JOIN user_reminders ON user_reminders.user_id = users.id").where("user_reminders.user_id IS null")
         reminderless_users.each do |u|
+            Event.create! typeof: "userSetReminder", user_id: u.id
             u.create_user_reminder!(reminder_time: start_time, last_reminder: start_time - 10.years)
         end
 
@@ -20,6 +21,7 @@ class ReminderEmails
             urd.save!
             next if remind_steps.empty?
 
+            Event.create! typeof: "sendEmail", user_id: u.id, data: { remind_topics: remind_steps }
             TopicReminderMailer.with(remind_topics: remind_steps, user_id: u.id).merged_reminder.deliver
         end
 

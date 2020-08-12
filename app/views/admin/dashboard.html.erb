@@ -25,8 +25,8 @@
         <% @events.each do |e| %>
             <tr>
                 <td><%= time_ago_in_words(e.created_at) %> ago / <%= e.created_at %></td>
-                <td><%= e.type ? e.type : "NULL" %></td>
-                <td><%= e.user.email ? e.user.email : "NULL" %></td>
+                <td><%= e.typeof ? e.typeof : "NULL" %></td>
+                <td><%= (e.user && e.user.email) ? e.user.email : "NULL" %></td>
                 <td><%= e.data %></td>
             </tr>
         <% end %>
