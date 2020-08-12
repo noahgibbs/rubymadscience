@@ -5,6 +5,8 @@ class ReminderEmails
         start_time = Time.current
         today = start_time.beginning_of_day
 
+        Event.create!(typeof: "doReminderEmails", data: {})
+
         reminderless_users = User.joins("LEFT OUTER JOIN user_reminders ON user_reminders.user_id = users.id").where("user_reminders.user_id IS null")
         reminderless_users.each do |u|
             Event.create! typeof: "userSetReminder", user_id: u.id
