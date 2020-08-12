@@ -110,4 +110,16 @@ class UserCreationAndValidationTest < ActionDispatch::IntegrationTest
         assert_equal 0, User.where(id: user_id).count
     end
 
+    test "Can modify an existing user" do
+        user_id = users(:unconfirmed).id
+
+        sign_in users(:unconfirmed)
+        put user_registration_url, params: { user: { current_password: "password", password: "barble", password_confirmation: "barble" } }
+        assert_response :redirect
+        follow_redirect!
+        assert_response :success
+
+        assert !User.find(user_id).valid_password?("password"), "Old password should not work after account update!"
+        assert User.find(user_id).valid_password?("barble"), "New password should work after account update!"
+    end
 end
