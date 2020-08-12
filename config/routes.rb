@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   devise_for :users, path: :auth, controllers: {
     confirmations: 'users/confirmations',
     passwords: 'users/passwords',
+    registrations: 'users/registrations',
   }
 
   get 'admin/dashboard'

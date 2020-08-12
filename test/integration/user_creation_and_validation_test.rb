@@ -97,4 +97,17 @@ class UserCreationAndValidationTest < ActionDispatch::IntegrationTest
 
         assert_equal 1, ActionMailer::Base.deliveries.size
     end
+
+    test "Can delete an existing user" do
+        user_id = users(:unconfirmed).id
+
+        sign_in users(:unconfirmed)
+        delete user_registration_url
+        assert_response :redirect
+        follow_redirect!
+        assert_response :success
+
+        assert_equal 0, User.where(id: user_id).count
+    end
+
 end
