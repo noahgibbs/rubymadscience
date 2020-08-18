@@ -1,0 +1,256 @@
+{
+    "name": "Rebuilding Rails",
+    "desc": "This topic will help you work through Rebuilding Rails, and remind you to keep at it!",
+    "thumbnail_url": "/img/dr_bear_microscope_thumb.png",
+    "bigthumb_url":  "/img/dr_bear_microscope_bigthumb.png",
+    "fullsize_url":  "/img/dr_bear_microscope_fullsize.png",
+    "data": {
+        "related": ["rails_internals"]
+    },
+    "steps": [
+        {
+            "name": "Video Chapter 1: Zero to 'It Works'",
+            "id": "video-1",
+            "type": "video",
+            "desc": "Start by setting up your gem for the R00lz framework.",
+            "data": {
+                "video": { "youtube": "TIuVEPSY7hg" }
+            }
+        },
+        {
+            "name": "Video Chapter 2: Controllers",
+            "id": "video-2",
+            "type": "video",
+            "desc": "Get your framework serving some requests! This is later in the same video as chapter 1.",
+            "data": {
+                "video": { "youtube": "TIuVEPSY7hg" }
+            }
+        },
+        {
+            "name": "Video Chapter 3: Automatic Loading",
+            "id": "video-3",
+            "url": "https://gumroad.com/library",
+            "type": "blog",
+            "desc": "For chapter 3 you'll need to log into Gumroad to see your purchased videos. Or skip these steps and switch to ebook! This chapter shows you how to do Rails-style automatic loading of classes.",
+            "data": {
+            }
+        },
+        {
+            "name": "Video Chapter 4: Views",
+            "id": "video-4",
+            "url": "https://gumroad.com/library",
+            "type": "blog",
+            "desc": "Learn how to use Erb to create your own Rails-style views.",
+            "data": {
+            }
+        },
+        {
+            "name": "Video Chapter 5: Models",
+            "id": "video-5",
+            "url": "https://gumroad.com/library",
+            "type": "blog",
+            "desc": "File models can be useful - RubyMadScience uses them! Learn how to write your own.",
+            "data": {
+            }
+        },
+        {
+            "name": "Video Chapter 6: Request, Response",
+            "id": "video-6",
+            "url": "https://gumroad.com/library",
+            "type": "blog",
+            "desc": "Your controllers get a lot more useful with Rack request and response objects.",
+            "data": {
+            }
+        },
+        {
+            "name": "Video Chapter 7: ORMs",
+            "id": "video-7",
+            "url": "https://gumroad.com/library",
+            "type": "blog",
+            "desc": "If you have the Rebuilding Rails Full package, walk through building your own Ruby ORM from scratch.",
+            "data": {
+            }
+        },
+        {
+            "name": "Video Chapter 8: Middleware",
+            "id": "video-8",
+            "url": "https://gumroad.com/library",
+            "type": "blog",
+            "desc": "This detachable chapter works at any point, and with basically any framework. Learn about Rack middleware.",
+            "data": {
+            }
+        },
+        {
+            "name": "Video Extra Chapter: DSLs and Microframeworks",
+            "id": "video-sinatra",
+            "url": "https://gumroad.com/library",
+            "type": "blog",
+            "desc": "Learn how to build a Sinatra-like microframework, implemented as a Ruby DSL, in both top-level and modular flavours.",
+            "data": {
+            }
+        },
+        {
+            "name": "Ebook Chapter 1",
+            "url": "https://codefol.io/links/RebuildingRailsFree.pdf",
+            "id": "ebook-1",
+            "type": "blog",
+            "desc": "Work through chapter 1 and set up your gem for Rulers.",
+            "data": {
+            }
+        },
+        {
+            "name": "Ebook Exercises for Chapter 1",
+            "url": "https://codefol.io/links/RebuildingRailsFree.pdf",
+            "id": "exercises-1",
+            "type": "blog",
+            "desc": "Work through the exercises for chapter 1. Don't worry, they're quick!",
+            "data": {
+            }
+        },
+        {
+            "name": "Ebook Chapter 2",
+            "url": "https://codefol.io/links/RebuildingRailsFree.pdf",
+            "id": "ebook-2",
+            "type": "blog",
+            "desc": "Work through chapter 2 - get controllers working!",
+            "data": {
+            }
+        },
+        {
+            "name": "Ebook Exercises for Chapter 2",
+            "url": "https://codefol.io/links/RebuildingRailsFree.pdf",
+            "id": "exercises-2",
+            "type": "blog",
+            "desc": "Work through the exercises for chapter 2.",
+            "data": {
+            }
+        },
+        {
+            "name": "Ebook Chapter 3",
+            "url": "https://gumroad.com/library",
+            "id": "ebook-3",
+            "type": "blog",
+            "desc": "Work through chapter 3 - automatic class loading!",
+            "data": {
+            }
+        },
+        {
+            "name": "Ebook Exercises for Chapter 3",
+            "url": "https://gumroad.com/library",
+            "id": "exercises-3",
+            "type": "blog",
+            "desc": "Work through the exercises for chapter 3.",
+            "data": {
+            }
+        },
+        {
+            "name": "Ebook Chapter 4",
+            "url": "https://gumroad.com/library",
+            "id": "ebook-4",
+            "type": "blog",
+            "desc": "Work through chapter 4 - Erb views!",
+            "data": {
+            }
+        },
+        {
+            "name": "Ebook Exercises for Chapter 4",
+            "url": "https://gumroad.com/library",
+            "id": "exercises-4",
+            "type": "blog",
+            "desc": "Work through the exercises for chapter 4.",
+            "data": {
+            }
+        },
+        {
+            "name": "Ebook Chapter 5",
+            "url": "https://gumroad.com/library",
+            "id": "ebook-5",
+            "type": "blog",
+            "desc": "Work through chapter 5 - File-based models!",
+            "data": {
+            }
+        },
+        {
+            "name": "Ebook Exercises for Chapter 5",
+            "url": "https://gumroad.com/library",
+            "id": "exercises-5",
+            "type": "blog",
+            "desc": "Work through the exercises for chapter 5.",
+            "data": {
+            }
+        },
+        {
+            "name": "Ebook Chapter 6",
+            "url": "https://gumroad.com/library",
+            "id": "ebook-6",
+            "type": "blog",
+            "desc": "Work through chapter 6 - Rack Request and Response objects!",
+            "data": {
+            }
+        },
+        {
+            "name": "Ebook Exercises for Chapter 6",
+            "url": "https://gumroad.com/library",
+            "id": "exercises-6",
+            "type": "blog",
+            "desc": "Work through the exercises for chapter 6.",
+            "data": {
+            }
+        },
+        {
+            "name": "Ebook Chapter 7",
+            "url": "https://gumroad.com/library",
+            "id": "ebook-7",
+            "type": "blog",
+            "desc": "Work through chapter 7 - Database-backed models and a simple ORM!",
+            "data": {
+            }
+        },
+        {
+            "name": "Ebook Exercises for Chapter 7",
+            "url": "https://gumroad.com/library",
+            "id": "exercises-7",
+            "type": "blog",
+            "desc": "Work through the exercises for chapter 7.",
+            "data": {
+            }
+        },
+        {
+            "name": "Ebook Chapter 8",
+            "url": "https://gumroad.com/library",
+            "id": "ebook-8",
+            "type": "blog",
+            "desc": "Work through chapter 8 - Rack middleware!",
+            "data": {
+            }
+        },
+        {
+            "name": "Ebook Exercises for Chapter 8",
+            "url": "https://gumroad.com/library",
+            "id": "exercises-8",
+            "type": "blog",
+            "desc": "Work through the exercises for chapter 8.",
+            "data": {
+            }
+        },
+        {
+            "name": "Ebook Chapter 9",
+            "url": "https://gumroad.com/library",
+            "id": "ebook-9",
+            "type": "blog",
+            "desc": "Work through chapter 9 - Routing!",
+            "data": {
+            }
+        },
+        {
+            "name": "Ebook Exercises for Chapter 9",
+            "url": "https://gumroad.com/library",
+            "id": "exercises-9",
+            "type": "blog",
+            "desc": "Work through the exercises for chapter 9.",
+            "data": {
+            }
+        },
+        {}
+    ]
+}
