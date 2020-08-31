@@ -5,7 +5,7 @@
     "bigthumb_url":  "/img/rails_internals_bigthumb.png",
     "fullsize_url":  "/img/rails_internals_fullsize.png",
     "data": {
-        "related": "rebuilding_rails"
+        "related": [ "rebuilding_rails" ]
     },
     "steps": [
         {

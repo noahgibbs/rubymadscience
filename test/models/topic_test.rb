@@ -11,7 +11,11 @@ class TopicTest < ActiveSupport::TestCase
 
   test "All production Topic JSON parses as Topics" do
     Topic.all.each do |topic|
+      topic.steps.each do |step|
         # Don't need to do anything - it'll have parsed or not by this point.
+      end
+      (topic.data["related"] || []).each do |rel_topic_id|
+      end
     end
   end
 end
