@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'sidekiq', '~>6.0.7'
+gem 'sidekiq', '~>6.2.1'
 
 gem 'honeybadger', '~> 4.0'
 
