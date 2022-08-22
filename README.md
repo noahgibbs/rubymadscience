@@ -1,6 +1,6 @@
 # RubyMadScience Class Software
 
-RubyMadScience is meant to be courseware - a series of steps you can take to learn a topic, with email reminders to come back and do more. The free hosted version is online at RubyMadScience.com, though of course you could host your own from the source code found here.
+RubyMadScience was courseware, tracking steps taken in learning various topics. At this point it's shut down - maintaining anything that sends email on the internet makes it a spam magnet, even if you're careful not to let it be *usefully* abusable.
 
 For how this software was initially written, step by step, see https://codefol.io/tags/rubymadscience
 

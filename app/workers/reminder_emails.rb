@@ -2,6 +2,8 @@ class ReminderEmails
     include Sidekiq::Worker
 
     def perform
+        return # Disable all email to prevent spamming
+
         start_time = Time.current
         today = start_time.beginning_of_day
 
