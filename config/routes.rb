@@ -1,25 +1,25 @@
 Rails.application.routes.draw do
-  get '/about' => 'pages#about'
-  get '/feedback' => 'pages#feedback'
-  get '/profile' => 'pages#profile'
+  #get '/about' => 'pages#about'
+  #get '/feedback' => 'pages#feedback'
+  #get '/profile' => 'pages#profile'
 
-  root 'topics#index'
-  get '/topics' => 'topics#index'
-  get 'topics/index'
-  get 'topics/show', to: "topics#show"
-  get 'topics/:id', to: "topics#show"
+  #root 'topics#index'
+  #get '/topics' => 'topics#index'
+  #get 'topics/index'
+  #get 'topics/show', to: "topics#show"
+  #get 'topics/:id', to: "topics#show"
 
-  post 'topics/update_subscription'
-  post 'steps/update_done'
+  #post 'topics/update_subscription'
+  #post 'steps/update_done'
 
-  devise_for :users, path: :auth, controllers: {
-    confirmations: 'users/confirmations',
-    passwords: 'users/passwords',
-    registrations: 'users/registrations',
-  }
+  #devise_for :users, path: :auth, controllers: {
+  #  confirmations: 'users/confirmations',
+  #  passwords: 'users/passwords',
+  #  registrations: 'users/registrations',
+  #}
 
-  get 'admin/dashboard'
-  get 'admin/users'
-  get 'admin/subs'
-  get 'admin/steps'
+  #get 'admin/dashboard'
+  #get 'admin/users'
+  #get 'admin/subs'
+  #get 'admin/steps'
 end
